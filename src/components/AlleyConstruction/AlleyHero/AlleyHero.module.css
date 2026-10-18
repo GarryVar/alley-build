@@ -1,0 +1,46 @@
+.Hero {
+    padding: 60px 0;
+    text-align: center;
+    background: #fff;
+    border-radius: var(--radius);
+}
+
+.HeroTitle {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    text-shadow: none;
+}
+
+.HeroSubtitle {
+    color: var(--color-gray);
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--primary-brand);
+    color: #fff;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: var(--primary-brand-light);
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1px solid var(--primary-brand);
+    color: var(--primary-brand);
+}
+
+.btn--outline:hover {
+    background: var(--primary-brand);
+    color: #fff;
+}

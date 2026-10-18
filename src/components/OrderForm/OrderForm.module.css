@@ -1,0 +1,49 @@
+.orderForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  button[type="submit"] {
+    background-color: var(--primary-brand);
+  }
+}
+
+.orderInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.orderInputWrapper {
+  padding: 5px;
+}
+
+.orderComments {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .orderForm {
+    align-items: start;
+    button {
+      width: 240px;
+    }
+  }
+  .orderInputWrapper {
+    width: 100%;
+  }
+
+  .orderInput {
+    flex-direction: row;
+  }
+}

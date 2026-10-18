@@ -1,0 +1,45 @@
+.header__logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--primary-brand);
+}
+
+.Header {
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid #e2e8f0;
+    background-image: linear-gradient(45deg, var(--primary-brand-light), green);
+    background-position: right center;
+    background-repeat: repeat;
+}
+
+.HeaderWrapper {
+    display: flex;
+    padding: 16px 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Nav {
+    display: flex;
+    gap: 24px;
+
+}
+
+.Link {
+    color: var(--color-white);
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 20px;
+
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+.linkActive {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

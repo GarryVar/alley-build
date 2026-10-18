@@ -1,0 +1,57 @@
+.header {
+  button {
+    background-color: transparent;
+    border-radius: 10px;
+
+    &:hover,
+    &:focus {
+      background-color: var(--primary-brand);
+
+      svg {
+        stroke: var(--color-white);
+      }
+    }
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    background-color: none;
+    color: var(--primary-brand);
+  }
+}
+
+.headerNavMenu {
+  a:hover {
+    color: var(--primary-brand);
+  }
+}
+
+.mobileMenu {
+  position: relative;
+}
+
+.mobileMenuWrapper {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 20px 0px var(--color-gray-900);
+  width: 80%;
+  transform: translateX(50%);
+  z-index: 90;
+
+  li:hover {
+    a {
+      color: var(--primary-brand-light);
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .headerNavMenu {
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 30px;
+  }
+}
