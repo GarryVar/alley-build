@@ -1,0 +1,202 @@
+.ProjectPage {
+  max-width: 768px; /* На ПК уже, на мобильном во всю ширину */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.BackLink {
+  display: inline-block;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.BackLink:hover {
+  color: #3b82f6;
+}
+
+.ProjectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ProjectCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.ImageWrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.Content {
+  flex: 1;
+}
+
+.Label {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.Title {
+  font-size: 2.25rem; /* 36px */
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.ShortDesc {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.DetailsTitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.FullDesc {
+  color: #334155;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.Stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.Stats div {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* ProjectPage.module.css */
+.Gallery {
+  width: 100%;
+}
+
+.GalleryTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+/* Сетка галереи: 2 колонки на мобильном, 3 на планшете, 4 на ПК */
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .Grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .Grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.Item {
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4/3; /* Фиксированное соотношение сторон, чтобы сетка не «прыгала» */
+}
+
+.Img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.Content {
+  padding-top: 0;
+}
+
+.Label {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.Title {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.ShortDesc {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.Stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.Stats div {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.DetailsTitle {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.FullDesc {
+  color: #334155;
+  line-height: 1.8;
+}

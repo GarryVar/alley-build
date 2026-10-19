@@ -1,45 +1,59 @@
-.header__logo {
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: var(--primary-brand);
-}
-
 .Header {
-    position: relative;
-    padding: 20px 0;
-    border-bottom: 1px solid #e2e8f0;
-    background-image: linear-gradient(45deg, var(--primary-brand-light), green);
-    background-position: right center;
-    background-repeat: repeat;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 50; /* Чтобы шапка была поверх Hero */
+  background: transparent; /* Полностью прозрачный фон */
+  padding: 1rem 0; /* Небольшой отступ сверху/снизу, чтобы не прилипало к краям */
+  background-color: var(--color-white);
 }
 
 .HeaderWrapper {
-    display: flex;
-    padding: 16px 10px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px; /* Фиксированная высота шапки (удобно для отступов) */
 }
 
 .Nav {
-    display: flex;
-    gap: 24px;
-
+  display: flex;
+  gap: 2rem; /* Расстояние между ссылками */
+  align-items: center;
 }
 
 .Link {
-    color: var(--color-white);
-    font-weight: 500;
-    transition: color 0.2s;
-    font-size: 20px;
-
-
-    &:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
+  font-size: 1rem;
+  color: var(
+    --primary-brand
+  ); /* Белый цвет для контраста на тёмной картинке Hero */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-.linkActive {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+.Link:hover {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 25px;
+  text-decoration-style: wavy;
+}
+
+.Link:hover,
+.Active {
+  color: var(--primary-brand-light);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 25px;
+}
+
+/* Адаптив: на мобильных ссылки переносятся и становятся крупнее */
+@media (max-width: 768px) {
+  .Nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .Link {
+    font-size: 1.125rem;
+  }
 }

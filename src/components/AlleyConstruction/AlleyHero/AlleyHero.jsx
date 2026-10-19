@@ -1,14 +1,64 @@
 import { Link } from "react-router-dom";
 import styles from "./AlleyHero.module.css";
 
+import About from "../AlleyAbout/AlleyAbout";
+import AlleyFeatures from "../AlleyFeatures/AlleyFeatures";
+import hero01 from "../../../assets/alley-building/hero01.jpg";
+
 function AlleyHero() {
-    return (
-        <section className={styles.Hero}>
-            <h1 className={styles.HeroTitle}>Ремонт и реставрация дворов, детских площадок, парков.</h1>
-            <p className={styles.HeroSubtitle}>Комплексное благоустройство дворовых территорий: асфальтирование, резиновое покрытие, монтаж оборудования и малые архитектурные формы. Работаем с УК, ТСЖ и администрацией.</p>
-            <Link to="/portfolio" className="btn btn--outline">Посмотреть выполненые работы</Link>
-        </section>
-    )
+  return (
+    <section className={styles.Hero}>
+      <div className={styles.HeroWrapper}>
+        {/* Картинка как фон-слой */}
+        <div className={styles.HeroImageLayer}>
+          <img
+            src={hero01}
+            alt="Благоустройство двора: детская площадка и пешеходные дорожки"
+            className={styles.HeroImg}
+          />
+        </div>
+
+        {/* Текст поверх картинки */}
+        <div className={styles.HeroContent}>
+          <h1 className={styles.HeroTitle}>
+            Благоустройство уличных территорий.
+          </h1>
+          <p className={styles.HeroSubtitle}>
+            От детских площадок до пешеходных зон — делаем городскую среду
+            удобной и красивой. Рассчитаем проект под ваш бюджет и сроки.
+          </p>
+
+          {/* Пример кнопки (раскомментируй, когда добавишь Link) */}
+          {/* <Link to="/portfolio" className="btn btn--outline">Посмотреть работы</Link> */}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default AlleyHero;
+
+{
+  /** 
+      <>
+      <section className={styles.Hero}>
+        <div className={styles.HeroWrapper}>
+          <div className={styles.HeroImage}>
+            <img src={hero01} alt="" />
+          </div>
+          <div className={`${styles.HeroContent} continaer max-w-7xl mx-auto`}>
+            <h1 className={styles.HeroTitle}>
+              Благоустройством уличных территорий — от детских площадок до
+              пешеходных зон
+            </h1>
+            <p className={styles.HeroSubtitle}>
+              « От детских площадок до пешеходных зон — делаем городскую среду
+              удобной и красивой. Рассчитаем проект под ваш бюджет и сроки
+            </p>
+          </div>
+       
+        </div>
+      </section>
+    </>
+    */
+}
