@@ -7,8 +7,8 @@ export const projects = [
     desc: "Ремонт дворового проезда, замена бордюров, устройство водоотвода. Площадь: 420 м².",
     image: thumbPark01,
     gallery: [
-      "/images/projects/child-park/gallery/gallery_childpark01.jpg",
-      "/images/projects/child-park/gallery/gallery_childpark02.jpg",
+      "/images/projects/child-park/gallery/gallery_childpark01.webp",
+      "/images/projects/child-park/gallery/gallery_childpark02.webp",
       "/images/projects/child-park/gallery/gallery_childpark03.jpg",
       "/images/projects/child-park/gallery/gallery_childpark04.jpg",
       "/images/projects/child-park/gallery/gallery_childpark05.jpg",
