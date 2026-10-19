@@ -51,7 +51,7 @@
 .Hamburger {
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--primary-brand);
   cursor: pointer;
   display: flex;
   align-items: center;
