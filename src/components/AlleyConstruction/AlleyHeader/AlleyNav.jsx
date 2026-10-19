@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import styles from "../AlleyHeader/AlleyHeader.module.css";
 
-function AlleyNav() {
+function AlleyNav({ onClose }) {
+  const handleClick = () => onClose?.();
   const links = [
     { text: "Главная", href: "/" },
     { text: "Солнечная энергия", href: "/inverters" },
@@ -10,10 +11,11 @@ function AlleyNav() {
 
   return (
     <nav>
-      <ul className={styles.Nav}>
+      <ul className={styles.NavMenu}>
         {links.map((i) => (
           <li>
             <NavLink
+              onClick={handleClick}
               className={({ isActive }) =>
                 isActive
                   ? `${styles.Link} ${styles.linkActive}`

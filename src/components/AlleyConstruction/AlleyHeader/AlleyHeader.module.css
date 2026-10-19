@@ -10,22 +10,13 @@
 
 .HeaderWrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px; /* Фиксированная высота шапки (удобно для отступов) */
-}
-
-.Nav {
-  display: flex;
-  gap: 2rem; /* Расстояние между ссылками */
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .Link {
-  font-size: 1rem;
-  color: var(
-    --primary-brand
-  ); /* Белый цвет для контраста на тёмной картинке Hero */
+  font-size: 1.148rem;
+  color: var(--color-white);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
@@ -34,12 +25,11 @@
 .Link:hover {
   text-decoration-thickness: 2px;
   text-underline-offset: 25px;
-  text-decoration-style: wavy;
 }
 
 .Link:hover,
 .Active {
-  color: var(--primary-brand-light);
+  color: var(--primary-brand);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 25px;
@@ -54,6 +44,75 @@
   }
 
   .Link {
-    font-size: 1.125rem;
+    font-size: 1.175rem;
+  }
+}
+
+.Hamburger {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  z-index: 50;
+}
+
+.Nav {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-brand-light);
+  padding: 16px 0;
+  z-index: 40;
+  width: 68vw;
+  height: 100vh;
+}
+
+.NavMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+}
+
+/* Скрыто по умолчанию на мобильных */
+.NavClosed {
+  display: none;
+}
+
+/* Открыто */
+.NavOpen {
+  display: flex;
+}
+
+/* На десктопе всегда видно, игнорируем состояние isOpen */
+@media (min-width: 768px) {
+  .Hamburger {
+    display: none;
+  }
+
+  .Nav {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    height: min-content;
+    background-color: var(--primary-brand-light);
+    border-radius: 10px;
+  }
+
+  .NavMenu {
+    flex-direction: row;
+    gap: 20px;
   }
 }

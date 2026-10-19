@@ -35,7 +35,7 @@ function Layout({ children }) {
   return (
     <div className="page-index bg-white min-h-screen flex flex-col">
       <AlleyHeader />
-      <main className="flex-grow w-full">{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
