@@ -37,28 +37,3 @@ function AlleyHero() {
 }
 
 export default AlleyHero;
-
-{
-  /** 
-      <>
-      <section className={styles.Hero}>
-        <div className={styles.HeroWrapper}>
-          <div className={styles.HeroImage}>
-            <img src={hero01} alt="" />
-          </div>
-          <div className={`${styles.HeroContent} continaer max-w-7xl mx-auto`}>
-            <h1 className={styles.HeroTitle}>
-              Благоустройством уличных территорий — от детских площадок до
-              пешеходных зон
-            </h1>
-            <p className={styles.HeroSubtitle}>
-              « От детских площадок до пешеходных зон — делаем городскую среду
-              удобной и красивой. Рассчитаем проект под ваш бюджет и сроки
-            </p>
-          </div>
-       
-        </div>
-      </section>
-    </>
-    */
-}
