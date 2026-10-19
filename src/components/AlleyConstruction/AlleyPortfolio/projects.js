@@ -1,7 +1,4 @@
-// src/data/projects.js
 import thumbPark01 from "../../../assets/alley-building/child-park-simferopol/thumb-park01.webp";
-
-// GALLERY
 export const projects = [
   {
     id: 1,
