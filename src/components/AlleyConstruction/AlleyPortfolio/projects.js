@@ -1,25 +1,37 @@
 import thumbPark01 from "../../../assets/alley-building/child-park-simferopol/thumb-park01.webp";
+
+import pic01 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark01.webp";
+import pic02 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark02.webp";
+import pic04 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark03.webp";
+import pic05 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark04.webp";
+import pic06 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark05.webp";
+import pic07 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark06.webp";
+import pic08 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark07.webp";
+import pic09 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark09.webp";
+import pic10 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark10.webp";
+import pic11 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark11.webp";
+import pic12 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark12.webp";
+import pic13 from "../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark13.webp";
 export const projects = [
   {
     id: 1,
     label: "Детский Парк",
     title: "Детский парк в городе Симферополь",
-    desc: "Ремонт дворового проезда, замена бордюров, устройство водоотвода. Площадь: 420 м².",
+    desc: "Аллея - строй выполнила кпитальный ремонт детского парка в городе Смферополь.",
     image: thumbPark01,
     gallery: [
-      "/images/projects/child-park/gallery/gallery_childpark01.webp",
-      "/images/projects/child-park/gallery/gallery_childpark02.webp",
-      "/images/projects/child-park/gallery/gallery_childpark03.webp",
-      "/images/projects/child-park/gallery/gallery_childpark04.webp",
-      "/images/projects/child-park/gallery/gallery_childpark05.webp",
-      "/images/projects/child-park/gallery/gallery_childpark06.webp",
-      "/images/projects/child-park/gallery/gallery_childpark07.webp",
-      "/images/projects/child-park/gallery/gallery_childpark08.webp",
-      "/images/projects/child-park/gallery/gallery_childpark09.webp",
-      "/images/projects/child-park/gallery/gallery_childpark10.webp",
-      "/images/projects/child-park/gallery/gallery_childpark11.webp",
-      "/images/projects/child-park/gallery/gallery_childpark12.webp",
-      "/images/projects/child-park/gallery/gallery_childpark13.webp",
+      pic01,
+      pic02,
+      pic04,
+      pic05,
+      pic06,
+      pic07,
+      pic08,
+      pic09,
+      pic10,
+      pic11,
+      pic12,
+      pic13,
     ],
     // Сюда потом можно добавить больше деталей для отдельной страницы
     details:

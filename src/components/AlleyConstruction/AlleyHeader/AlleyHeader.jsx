@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AlleyLogo from "../AlleyLogo/AlleyLogo";
 import AlleyNav from "./AlleyNav";
 import styles from "./AlleyHeader.module.css";
@@ -16,10 +17,7 @@ function AlleyHeader() {
         className={`${styles.HeaderWrapper} container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center`}
       >
         {/* Логотип */}
-        <a href="/" className="block">
-          <AlleyLogo />
-        </a>
-
+        <AlleyLogo />
         {/* Кнопка бургера (только на мобильных) */}
         <button
           type="button"
@@ -30,7 +28,6 @@ function AlleyHeader() {
         >
           {isOpen ? <IconMenuClose /> : <IconMenu />}
         </button>
-        <a href="tel:+79787737390">+79787737390</a>
         <div
           className={`${styles.Nav} ${isOpen ? styles.NavOpen : styles.NavClosed}`}
           role="navigation"

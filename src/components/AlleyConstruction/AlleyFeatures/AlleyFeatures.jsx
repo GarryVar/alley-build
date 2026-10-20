@@ -31,8 +31,8 @@ function AlleyFeatures() {
         Что мы делаем
       </h2>
       <div className="features__grid">
-        {features.map((i) => (
-          <article className="feature">
+        {features.map((i, indx) => (
+          <article className="feature" key={indx}>
             <div className="feature__icon">{i.icon}</div>
             <h3>{i.title}</h3>
             <p>{i.text}</p>

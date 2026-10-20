@@ -60,15 +60,16 @@ function ProjectPage() {
               Фотоотчёт проекта
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2">
-              {project.gallery.map((src, idx) => (
+              {project.gallery.map((src, indx) => (
                 <div
-                  key={idx}
-                  onClick={() => setModalIndex(idx)}
+                  key={indx}
+                  onClick={() => setModalIndex(indx)}
                   className="overflow-hidden rounded-lg cursor-pointer group aspect-[4/3] bg-gray-100"
                 >
                   <img
                     src={src}
-                    alt={`Фото проекта: ${project.title} (${idx + 1})`}
+                    alt={`Фото проекта: ${project.title} (${indx + 1})`}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>

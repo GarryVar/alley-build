@@ -12,17 +12,14 @@ function AlleyNav({ onClose }) {
   return (
     <nav>
       <ul className={styles.NavMenu}>
-        {links.map((i) => (
-          <li>
+        {links.map((i, indx) => (
+          <li key={indx}>
             <NavLink
+              to={i.href}
               onClick={handleClick}
               className={({ isActive }) =>
-                isActive
-                  ? `${styles.Link} ${styles.linkActive}`
-                  : `${styles.Link}`
+                isActive ? `${styles.Link} ${styles.Active}` : `${styles.Link}`
               }
-              to={i.href}
-              key={i.href}
             >
               {i.text}
             </NavLink>
