@@ -5,7 +5,10 @@ function AlleyNav({ onClose }) {
   const handleClick = () => onClose?.();
   const links = [
     { text: "Главная", href: "/" },
-    { text: "Солнечная энергия", href: "/inverters" },
+    {
+      text: "Солнечная энергия",
+      href: "https://garryvar.github.io/inverter-energy/#home",
+    },
     { text: "Наши работы", href: "/portfolio" },
   ];
 
