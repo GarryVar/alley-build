@@ -48,4 +48,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: gitverse.ru/actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
