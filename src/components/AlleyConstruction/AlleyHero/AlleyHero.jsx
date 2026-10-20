@@ -1,9 +1,5 @@
-import { Link } from "react-router-dom";
 import styles from "./AlleyHero.module.css";
-
-import About from "../AlleyAbout/AlleyAbout";
-import AlleyFeatures from "../AlleyFeatures/AlleyFeatures";
-import hero01 from "../../../assets/alley-building/hero01.jpg";
+import hero01 from "../../../assets/alley-building/hero01.webp";
 
 function AlleyHero() {
   return (
