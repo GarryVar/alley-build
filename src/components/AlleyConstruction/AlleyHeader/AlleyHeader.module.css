@@ -5,6 +5,7 @@
   z-index: 50;
   background: transparent;
   padding: 1rem 0;
+  background-color: var(--color-white);
 }
 
 .HeaderWrapper {

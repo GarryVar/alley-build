@@ -5,7 +5,6 @@ import Features from "../Features/Features";
 import IconFeaturesToggle from "../SvgIcons/IconFeatures";
 import { useOrderSubmit } from "../../hooks/useOrderSubmit";
 import { ProductZoom } from "./ProductZoom";
-import OrderSuccessScreen from "../OrderSuccessScreen/OrderSuccessScreen";
 
 function OrderModal({ product, onClose }) {
   const [formData, setFormData] = useState({
@@ -140,10 +139,11 @@ function OrderModal({ product, onClose }) {
                   >
                     Характеристики
                     <div
-                      className={`${styles.orderIconArrow} ${isFeaturesVisible
-                        ? styles.orderIconArrowUp
-                        : styles.orderIconArrowDown
-                        }`}
+                      className={`${styles.orderIconArrow} ${
+                        isFeaturesVisible
+                          ? styles.orderIconArrowUp
+                          : styles.orderIconArrowDown
+                      }`}
                     >
                       <IconFeaturesToggle />
                     </div>
