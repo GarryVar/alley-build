@@ -1,11 +1,16 @@
 .Header {
   position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 50;
-  background: transparent;
-  padding: 1rem 0;
+  top: 20px; /* «парит» чуть ниже верха */
+  display: inline-flex; /* блок становится по ширине контента */
+  justify-content: center; /* центрируем сам блок на строке */
+  width: auto; /* важно: не 100%, а по контенту */
+  max-width: 100%; /* но не шире экрана на мобильных */
+  padding: 1rem 24px; /* боковые отступы вокруг контента */
   background-color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  margin: 0 auto; /* страховка: если inline-flex вдруг не сработает в каком-то контексте */
+  border-radius: 10px;
 }
 
 .HeaderWrapper {
@@ -13,6 +18,7 @@
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  /* без width: 100% — пусть будет по контенту */
 }
 
 /* Ссылки (NavLink) */
@@ -74,7 +80,7 @@
   position: fixed; /* фиксируем, чтобы не зависеть от родителя */
   top: 0;
   left: -100%; /* скрываем за левым краем */
-  width: 75vw;
+  width: 60vw;
   height: 100vh;
   padding-left: 30px;
   padding-top: 80px; /* отступ под липкую шапку */

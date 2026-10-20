@@ -1,20 +1,27 @@
 .Hero {
   width: 100%;
-  height: 100vh; /* На весь экран */
+  height: 100vh;
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  margin-top: -70px; /* Отрицательный отступ: Hero заезжает под шапку */
-  padding-top: 70px; /* Компенсируем, чтобы текст не уехал вверх */
+  background-image: linear-gradient(
+    var(--hero-gradient1),
+    var(--hero-gradient2)
+  );
+
+  /* Ключевой момент: Hero заезжает вверх и перекрывает шапку */
+  margin-top: -90px;
+  padding-top: 90px;
+
+  z-index: 0; /* Чтобы слои внутри Hero были ниже шапки */
 }
 
 .HeroWrapper {
   position: relative;
   width: 100%;
-  height: 100%; /* Теперь это сработает, потому что у .Hero есть height */
+  height: 100%;
 }
 
-/* Слой с картинкой */
 .HeroImageLayer {
   position: absolute;
   top: 0;
@@ -22,18 +29,17 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  overflow: hidden; /* На всякий случай обрезаем всё, что вылезает */
+  overflow: hidden;
 }
 
 .HeroImg {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Самое важное: картинка заполняет весь блок, не искажаясь */
+  object-fit: cover; /* Картинка заполняет весь блок, не искажаясь */
   display: block;
   filter: contrast(0.5);
 }
 
-/* Слой с текстом */
 .HeroContent {
   position: absolute;
   top: 50%;
@@ -45,8 +51,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
+  gap: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 16px 12px;
 }
 
 .HeroTitle {
@@ -70,33 +79,44 @@
 /* --- АДАПТИВНОСТЬ (ПК и планшеты) --- */
 @media (min-width: 768px) {
   .Hero {
-    height: 60vh; /* Чуть меньше, чем на мобильном, чтобы не было слишком длинно */
-    min-height: 600px; /* Но не меньше 600px */
+    /* Делаем блок выше: 85vh вместо 60vh, но не меньше 700px */
+    height: 85vh;
+    min-height: 700px;
   }
 
   .HeroContent {
+    top: 50%;
+    left: 50%;
+    /* Смещение влево: -65% даёт примерно тот же эффект, что и left: 15% */
+    transform: translate(-65%, -50%);
+
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: 100%;
-    top: auto;
-    bottom: auto;
-    left: 15%;
-    transform: none;
     text-align: left;
+
     max-width: 800px;
-    padding: 0;
-    padding-top: 60px;
+    width: 100%;
+    padding: 16px 12px;
+    border: 1px solid white;
+    border-radius: 10px;
   }
 
   .HeroTitle {
     font-size: 3.4rem;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
     text-align: left;
   }
 
   .HeroSubtitle {
     font-size: 1.125rem;
+    line-height: 1.5;
+    color: #f8fafc;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
     max-width: 480px;
     margin: 0;
     text-align: left;

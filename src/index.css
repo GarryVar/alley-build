@@ -5,6 +5,8 @@
   --primary-brand-light: #78b833;
 
   --swiper-pagination-color: var(--primary-brand);
+  --hero-gradient1: #b1b2b1;
+  --hero-gradient2: #8797a2;
 
   /* Аллея-строй */
 
@@ -226,6 +228,10 @@ body {
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+main {
+  margin-top: -110px;
 }
 
 .page-index {

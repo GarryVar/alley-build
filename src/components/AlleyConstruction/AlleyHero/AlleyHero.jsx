@@ -13,7 +13,6 @@ function AlleyHero() {
             className={styles.HeroImg}
           />
         </div>
-
         {/* Текст поверх картинки */}
         <div className={styles.HeroContent}>
           <h1 className={styles.HeroTitle}>
