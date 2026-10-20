@@ -80,7 +80,7 @@
   position: fixed; /* фиксируем, чтобы не зависеть от родителя */
   top: 0;
   left: -100%; /* скрываем за левым краем */
-  width: 60vw;
+  width: 57vw;
   height: 100vh;
   padding-left: 30px;
   padding-top: 80px; /* отступ под липкую шапку */
