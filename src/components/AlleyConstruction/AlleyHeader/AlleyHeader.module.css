@@ -1,0 +1,151 @@
+.Header {
+  position: sticky;
+  top: 20px; /* «парит» чуть ниже верха */
+  display: inline-flex; /* блок становится по ширине контента */
+  justify-content: center; /* центрируем сам блок на строке */
+  width: auto; /* важно: не 100%, а по контенту */
+  max-width: 100%; /* но не шире экрана на мобильных */
+  padding: 1rem 24px; /* боковые отступы вокруг контента */
+  background-color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  margin: 0 auto; /* страховка: если inline-flex вдруг не сработает в каком-то контексте */
+  border-radius: 10px;
+}
+
+.HeaderWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  /* без width: 100% — пусть будет по контенту */
+}
+
+/* Ссылки (NavLink) */
+.Link {
+  position: relative;
+  font-size: 1.148rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    color 0.2s,
+    opacity 0.2s;
+  text-transform: uppercase;
+  color: var(
+    --primary-brand
+  ); /* если фон шапки прозрачный, нужен белый текст */
+}
+
+.Link:hover,
+.Active {
+  color: var(--primary-brand);
+}
+
+/* Подчёркивание при наведении/активном состоянии */
+.Link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-brand); /* цвет подчёркивания = цвет бренда */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.Link:hover::after,
+.Active::after {
+  transform: scaleX(1);
+}
+
+/* Гамбургер */
+.Hamburger {
+  background: none;
+  border: none;
+  color: var(--primary-brand);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  z-index: 51; /* чуть выше Header */
+}
+
+/* Контейнер меню (обёртка для ul/li) */
+.Nav {
+  display: flex;
+  gap: 24px;
+  position: fixed; /* фиксируем, чтобы не зависеть от родителя */
+  top: 0;
+  left: -100%; /* скрываем за левым краем */
+  width: 57vw;
+  height: 100vh;
+  padding-left: 30px;
+  padding-top: 80px; /* отступ под липкую шапку */
+  padding-bottom: 16px;
+  background: var(--color-white);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  z-index: 40;
+  transition: left 0.3s ease-in-out;
+}
+
+/* Класс для открытого состояния (добавляется через React) */
+.NavOpen {
+  left: 0;
+}
+
+.NavMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.MenuItem {
+  /* опционально: hover-эффект для пункта меню */
+}
+
+@media (min-width: 768px) {
+  .Header {
+    background-color: var(--color-white);
+  }
+
+  .Hamburger {
+    display: none;
+  }
+
+  .Nav {
+    position: static;
+    top: auto;
+    left: auto;
+    width: max-content;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    gap: 0; /* Убираем фиксированный gap, будем использовать justify-content */
+    z-index: auto;
+    justify-content: space-between; /* Распределяет пункты равномерно */
+  }
+
+  /* Важно: убираем gap у самого Nav, но добавляем его внутри списка */
+  .NavMenu {
+    flex-direction: row;
+    gap: 40px; /* Хороший большой отступ между пунктами */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: center; /* Центрируем пункты относительно себя */
+  }
+
+  .Link {
+    /* Опционально: увеличиваем размер шрифта на больших экранах */
+    font-size: 1.25rem;
+  }
+}

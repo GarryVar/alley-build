@@ -1,0 +1,14 @@
+.Form {
+  box-shadow: none;
+
+  input,
+  select,
+  textarea {
+    box-shadow: none;
+    color: var(--color-gray-900);
+
+    ::placeholder {
+      color: var(--color-gray-900);
+    }
+  }
+}

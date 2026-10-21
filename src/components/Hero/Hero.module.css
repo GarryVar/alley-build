@@ -1,0 +1,53 @@
+.relative {
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: var(--radius-4xl);
+  border-bottom-right-radius: var(--radius-4xl);
+  background-color: var(--primary-grey);
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: static;
+  padding-bottom: 20px;
+}
+
+h1 {
+  text-shadow: 0px 1px 20px #1018289e;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.hero {
+  object-fit: contain;
+}
+
+button {
+  background-color: var(--primary-brand);
+}
+
+.modalWrapper {
+  position: relative;
+  background-color: transparent;
+}
+
+.buttonClose {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  background-color: transparent;
+}
+
+@media (min-width: 920px) {
+  .title {
+    position: absolute;
+    display: block;
+  }
+}

@@ -1,0 +1,66 @@
+import styles from "./Products.module.css";
+
+export function ProductCard({ product, onOrderClick }) {
+  const handleCardClick = () => {
+    onOrderClick(product);
+  };
+
+  function checkStock() {
+    return product.inStock ? `${styles.inStock}` : `${styles.outStock}`;
+  }
+
+  return (
+    <div
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          handleCardClick();
+        }
+      }}
+      className={`${styles.productItem} group overflow-hidden transition-all duration-300 bg-white  cursor-pointer  focus:outline-none`}
+    >
+      <img
+        src={product.image}
+        alt={product.title}
+        className="w-full h-48 object-cover"
+        loading="lazy"
+      />
+      <div className="p-10">
+        {
+          (product.inStock ? (
+            <span
+              className={`${styles.productBadge} ${styles.inStock} inline-block  text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide mb-3`}
+            >
+              В наличии
+            </span>
+          ) : (
+            <span
+              className={`${styles.productBadge} ${styles.outStock} inline-block  text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide mb-3`}
+            >
+              Нет в наличии
+            </span>
+          ))}
+        <h3
+          className={`${styles.productName} text-lg font-bold mb-2 text-gray-800 line-clamp-2`}
+        >
+          {product.title}
+        </h3>
+        <p className={styles.productModel}>{product.model}</p>
+        <div
+          className={`${styles.productItemOrder} flex justify-between items-center mt-4`}
+        >
+          <span className="font-bold text-lg text-gray-800">
+            {product.price}
+          </span>
+          <button className="py-3 bg-blue-600 text-white font-bold rounded-md transition-colors shadow-md">
+            Подробно
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProductCard;

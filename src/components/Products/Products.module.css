@@ -1,0 +1,192 @@
+/* Контейнер сетки карточек */
+.products {
+  position: relative;
+}
+
+.productsWrapper {
+  padding: 60px 0;
+  /* border-bottom: 2px solid var(--primary-grey); */
+}
+
+.pruductsWrapperType {
+  h4 {
+    margin-bottom: 5px;
+    padding: 10px;
+    color: var(--primary-brand-light);
+    border-bottom: 1px solid var(--primary-grey);
+    letter-spacing: 1.2px;
+    font-weight: normal;
+  }
+
+  small {
+    font-size: 12px;
+  }
+}
+
+.productTypeTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+
+  &:hover {
+    background-color: #f4f3f3;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px var(--primary-grey);
+  }
+}
+
+.productTypeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+
+  margin-left: auto;
+  background-color: transparent;
+  color: var(--primary-brand-light);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-grey);
+    color: var(--color-white);
+  }
+}
+
+/* Поворот иконки на 90° при открытой секции, на 0° — при закрытой */
+.iconRotate {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  transform: rotate(-45deg);
+}
+
+/* Анимация сворачивания галереи */
+.productGallery {
+  min-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.3s ease-out;
+}
+
+.galleryOpen {
+  opacity: 1;
+  max-height: 1000px;
+  /* подбери значение чуть больше ожидаемой высоты */
+}
+
+.galleryClosed {
+  opacity: 0;
+  max-height: 0;
+}
+
+.productType {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productGallery {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Карточка товара */
+.productItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition:
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    button {
+      background-color: var(--primary-brand-light);
+    }
+  }
+}
+
+/* .productItem:hover {
+  transform: translateY(0.5px);
+} */
+
+.productItem img {
+  width: 600px;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.productName {
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.productModel {
+  font-size: 12px;
+  color: var(--primary-light);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Бейджи */
+.productBadge,
+.inStock,
+.outStock {
+  width: max-content;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  color: white;
+}
+
+.outStock {
+  background-color: #fd4c4c;
+  border: 1px solid #da3f3f;
+}
+
+.inStock {
+  background-color: #82cd62;
+  border: 1px solid #3b9b30;
+}
+
+.productItemOrder {
+  gap: 10px;
+  flex-direction: column;
+
+  button {
+    padding: 10px;
+  }
+}
+
+.productBadge,
+.productBadgeInStock {
+  right: 0;
+  left: auto;
+}
+
+.productBadgeOutStock,
+.productBadgeInStock {
+  left: 0;
+  right: auto;
+}
+
+.productBadgeOutStock {
+  background-color: var(--color-gray-200);
+}
+
+@media (min-width: 768px) {
+  .productGallery {
+    margin: 0;
+    width: 100%;
+  }
+}
