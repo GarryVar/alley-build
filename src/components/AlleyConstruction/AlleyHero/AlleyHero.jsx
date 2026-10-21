@@ -9,14 +9,14 @@ function AlleyHero() {
         <div className={styles.HeroImageLayer}>
           <img
             src={hero01}
-            alt="Благоустройство двора: детская площадка и пешеходные дорожки"
+            alt="Занимаемся благоустройством общественных пространств и уличных территорий"
             className={styles.HeroImg}
           />
         </div>
         {/* Текст поверх картинки */}
         <div className={styles.HeroContent}>
           <h1 className={styles.HeroTitle}>
-            Благоустройство уличных территорий.
+            «АЛЛЕЯ-СТРОЙ» специализируется на благоустройстве общественных пространств и уличных территорий»
           </h1>
           <p className={styles.HeroSubtitle}>
             От детских площадок до пешеходных зон — делаем городскую среду
