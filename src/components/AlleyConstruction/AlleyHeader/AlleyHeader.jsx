@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import AlleyLogo from "../AlleyLogo/AlleyLogo";
 import AlleyNav from "./AlleyNav";
 import styles from "./AlleyHeader.module.css";
-import IconMenu from "../../SvgIcons/IconMenu"; // твой SVG иконки
+import IconMenu from "../../SvgIcons/IconMenu";
 import IconMenuClose from "../../SvgIcons/IconMenuClose";
 
 function AlleyHeader() {
@@ -18,21 +17,34 @@ function AlleyHeader() {
       >
         {/* Логотип */}
         <AlleyLogo />
+
         {/* Кнопка бургера (только на мобильных) */}
         <button
           type="button"
-          className={`${styles.Hamburger} block md:hidden`} // md:hidden — скрывает на планшетах и выше
+          className={`${styles.Hamburger} block md:hidden`}
           aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
           onClick={toggleMenu}
           aria-expanded={isOpen}
         >
           {isOpen ? <IconMenuClose /> : <IconMenu />}
         </button>
+
+        {/* Выезжающее меню */}
         <div
           className={`${styles.Nav} ${isOpen ? styles.NavOpen : styles.NavClosed}`}
           role="navigation"
           aria-label="Главное меню"
         >
+          {/* Кнопка закрытия — в самом верху меню */}
+          <button
+            type="button"
+            className={styles.CloseButton}
+            aria-label="Закрыть меню"
+            onClick={toggleMenu}
+          >
+            <IconMenuClose />
+          </button>
+
           <AlleyNav onClose={toggleMenu} />
         </div>
       </div>

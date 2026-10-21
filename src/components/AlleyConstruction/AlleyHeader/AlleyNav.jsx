@@ -5,15 +5,15 @@ function AlleyNav({ onClose }) {
   const handleClick = () => onClose?.();
   const links = [
     { text: "Главная", href: "/" },
-    {
-      text: "Солнечная энергия",
-      href: "https://garryvar.github.io/inverter-energy/#home",
-    },
     { text: "Наши работы", href: "/portfolio" },
+    {
+      text: "О нас",
+      href: "/about",
+    },
   ];
 
   return (
-    <nav>
+    <nav className={styles.NavWrapper}>
       <ul className={styles.NavMenu}>
         {links.map((i, indx) => (
           <li key={indx}>
@@ -29,6 +29,21 @@ function AlleyNav({ onClose }) {
           </li>
         ))}
       </ul>
+      <div className={styles.NavMenuSeparator}>Наши подразделения
+
+        <ul className={styles.NavMenu}>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${styles.Link} ${styles.Active}` : `${styles.Link}`
+              }
+              onClick={handleClick}
+              to="https://garryvar.github.io/inverter-energy/#home">
+              Солнечная эннергия
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

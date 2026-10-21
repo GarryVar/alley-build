@@ -4,22 +4,22 @@
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(
-    var(--hero-gradient1),
-    var(--hero-gradient2)
-  );
+  background-image: linear-gradient(var(--hero-gradient1),
+      var(--hero-gradient2));
 
   /* Ключевой момент: Hero заезжает вверх и перекрывает шапку */
   margin-top: -90px;
   padding-top: 90px;
 
-  z-index: 0; /* Чтобы слои внутри Hero были ниже шапки */
+  z-index: 0;
+  /* Чтобы слои внутри Hero были ниже шапки */
 }
 
 .HeroWrapper {
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 280px;
 }
 
 .HeroImageLayer {
@@ -35,7 +35,8 @@
 .HeroImg {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Картинка заполняет весь блок, не искажаясь */
+  object-fit: cover;
+  /* Картинка заполняет весь блок, не искажаясь */
   display: block;
   filter: contrast(0.5);
 }
@@ -85,17 +86,11 @@
   }
 
   .HeroContent {
-    top: 50%;
-    left: 50%;
-    /* Смещение влево: -65% даёт примерно тот же эффект, что и left: 15% */
-    transform: translate(-65%, -50%);
-
     display: flex;
     flex-direction: column;
     gap: 30px;
     text-align: left;
 
-    max-width: 800px;
     width: 100%;
     padding: 16px 12px;
     border: 1px solid white;
@@ -120,5 +115,11 @@
     max-width: 480px;
     margin: 0;
     text-align: left;
+  }
+}
+
+@media(min-width: 920px) {
+  .HeroContent {
+    max-width: 60vw;
   }
 }
