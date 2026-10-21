@@ -1,4 +1,4 @@
-# 🔌 Landing Page for Inverter UPS Company
+# 🔌 Landing Page for constructor company "Аллея-Строй"
 
 A clean, responsive landing page for a company specializing in inverter UPS systems. Designed with a strong focus on user experience and mobile-first adaptability.
 
