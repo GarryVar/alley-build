@@ -9,7 +9,7 @@ import "animate.css";
 
 function App() {
   return (
-    <HashRouter basename="/alley-build/">
+    <HashRouter>
       <Routes>
         {/* Главная страница: Layout оборачивает HomePage */}
         <Route
