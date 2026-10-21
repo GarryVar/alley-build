@@ -1,5 +1,6 @@
 import styles from "./AlleyHero.module.css";
 import hero01 from "../../../assets/alley-building/hero01.webp";
+import { Link } from "react-router-dom";
 
 function AlleyHero() {
   return (
@@ -23,7 +24,7 @@ function AlleyHero() {
           </p>
 
           {/* Пример кнопки (раскомментируй, когда добавишь Link) */}
-          {/* <Link to="/portfolio" className="btn btn--outline">Посмотреть работы</Link> */}
+          <Link to="/portfolio" className="btn btn--outline">Посмотреть работы</Link>
         </div>
       </div>
     </section>
