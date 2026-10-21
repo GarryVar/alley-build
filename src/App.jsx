@@ -9,7 +9,7 @@ import "animate.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/alley-build/">
+    <BrowserRouter basename="/">
       <Routes>
         {/* Главная страница: Layout оборачивает HomePage */}
         <Route
