@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import HomePage from "./Pages/HomePage";
 import AlleyPortfolio from "./components/AlleyConstruction/AlleyPortfolio/AlleyPortfolio";
@@ -9,7 +9,7 @@ import "animate.css";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/alley-build/">
       <Routes>
         {/* Главная страница: Layout оборачивает HomePage */}
         <Route
@@ -42,7 +42,7 @@ function App() {
           }
         />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
