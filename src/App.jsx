@@ -1,8 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import HomePage from "./Pages/HomePage";
 import AlleyPortfolio from "./components/AlleyConstruction/AlleyPortfolio/AlleyPortfolio";
-import InverterHome from "./components/InverterHome/InverterHome";
 import ProjectPage from "./components/AlleyConstruction/ProjectPage/ProjectPage"; // Импортируем страницу проекта
 
 import "./index.css";
@@ -10,7 +9,7 @@ import "animate.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/alley-build/">
+    <HashRouter basename="/alley-build/">
       <Routes>
         {/* Главная страница: Layout оборачивает HomePage */}
         <Route
@@ -42,18 +41,8 @@ function App() {
             </Layout>
           }
         />
-
-        {/* Инверторы */}
-        <Route
-          path="/inverters"
-          element={
-            <Layout>
-              <InverterHome />
-            </Layout>
-          }
-        />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

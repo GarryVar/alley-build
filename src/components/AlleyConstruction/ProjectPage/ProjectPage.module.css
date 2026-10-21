@@ -1,7 +1,13 @@
 .ProjectPage {
-  max-width: 768px; /* На ПК уже, на мобильном во всю ширину */
+  max-width: 768px;
+  /* На ПК уже, на мобильном во всю ширину */
   margin: 0 auto;
   padding: 2rem 1rem;
+}
+
+.GalleryGrid {
+  max-height: 260px;
+  overflow: auto;
 }
 
 .BackLink {
@@ -26,6 +32,11 @@
   .ProjectCard {
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  .GalleryGrid {
+    height: 100%;
+    overflow: none;
   }
 }
 
@@ -61,7 +72,8 @@
 }
 
 .Title {
-  font-size: 2.25rem; /* 36px */
+  font-size: 2.25rem;
+  /* 36px */
   line-height: 1.2;
   margin-bottom: 1rem;
   color: #1e293b;
@@ -134,7 +146,8 @@
 .Item {
   overflow: hidden;
   border-radius: 8px;
-  aspect-ratio: 4/3; /* Фиксированное соотношение сторон, чтобы сетка не «прыгала» */
+  aspect-ratio: 4/3;
+  /* Фиксированное соотношение сторон, чтобы сетка не «прыгала» */
 }
 
 .Img {

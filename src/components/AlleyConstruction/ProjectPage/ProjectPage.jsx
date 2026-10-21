@@ -2,6 +2,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { projects } from "../AlleyPortfolio/projects";
+import styles from "./ProjectPage.module.css";
 
 function ProjectPage() {
   const { id } = useParams();
@@ -59,7 +60,7 @@ function ProjectPage() {
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               Фотоотчёт проекта
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2">
+            <div className={`${styles.GalleryGrid} grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2`}>
               {project.gallery.map((src, indx) => (
                 <div
                   key={indx}
@@ -103,7 +104,9 @@ function ProjectPage() {
             <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900">
               О проекте
             </h2>
-            <p className="text-gray-700 leading-relaxed">{project.details}</p>
+            <div>{project.details.map((i, indx) => (
+              <p key={indx} className="text-gray-700 leading-relaxed">{i}</p>
+            ))}</div>
 
             <button className="mt-6 inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors">
               Запросить смету
