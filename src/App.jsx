@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import HomePage from "./Pages/HomePage";
+import AlleyCompany from "./components/AlleyConstruction/AlleyCompany";
 import AlleyPortfolio from "./components/AlleyConstruction/AlleyPortfolio/AlleyPortfolio";
 import ProjectPage from "./components/AlleyConstruction/ProjectPage/ProjectPage"; // Импортируем страницу проекта
 
@@ -27,6 +28,15 @@ function App() {
           element={
             <Layout>
               <AlleyPortfolio />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/company"
+          element={
+            <Layout>
+              <AlleyCompany />
             </Layout>
           }
         />

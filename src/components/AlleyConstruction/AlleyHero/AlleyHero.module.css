@@ -121,6 +121,15 @@
 
 @media (min-width: 920px) {
   .HeroContent {
-    max-width: 60vw;
+    justify-content: center;
+    max-width: 720px;
+
+    h1 {
+      text-align: center;
+      font-size: 70px;
+    }
+    p {
+      font-size: 20px;
+    }
   }
 }

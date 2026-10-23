@@ -8,7 +8,7 @@ function AlleyNav({ onClose }) {
     { text: "Наши работы", href: "/portfolio" },
     {
       text: "О нас",
-      href: "/about",
+      href: "/company",
     },
   ];
 
@@ -29,8 +29,8 @@ function AlleyNav({ onClose }) {
           </li>
         ))}
       </ul>
-      <div className={styles.NavMenuSeparator}>Наши подразделения
-
+      <div className={styles.NavMenuSeparator}>
+        Наши подразделения
         <ul className={styles.NavMenu}>
           <li>
             <NavLink
@@ -38,7 +38,8 @@ function AlleyNav({ onClose }) {
                 isActive ? `${styles.Link} ${styles.Active}` : `${styles.Link}`
               }
               onClick={handleClick}
-              to="https://garryvar.github.io/inverter-energy/#home">
+              to="https://garryvar.github.io/inverter-energy/#home"
+            >
               Солнечная эннергия
             </NavLink>
           </li>
