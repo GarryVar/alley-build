@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import HomePage from "./Pages/HomePage";
-import AlleyCompany from "./components/AlleyConstruction/AlleyCompany";
+import AlleyCompany from "./components/AlleyConstruction/AlleyCompany/AlleyCompany";
 import AlleyPortfolio from "./components/AlleyConstruction/AlleyPortfolio/AlleyPortfolio";
 import ProjectPage from "./components/AlleyConstruction/ProjectPage/ProjectPage"; // Импортируем страницу проекта
 

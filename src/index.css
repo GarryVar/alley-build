@@ -216,10 +216,10 @@
   }
 }
 
-h2 {
-  text-decoration: underline;
-  text-underline-offset: 15px;
-  color: #32302f;
+h1,
+h2,
+h3 {
+  color: var(--primary-brand-light);
 }
 
 html {

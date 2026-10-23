@@ -1,0 +1,15 @@
+.AlleyCompanyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.AlleyCompanyPicture {
+  position: relative;
+}
+
+.AlleyCompanyDesc {
+  padding: 30px;
+  /* border: 1px solid var(--primary-grey); */
+  background-color: white;
+}
