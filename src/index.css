@@ -1,8 +1,8 @@
 :root {
   --primary-grey: #dbdbdb;
   --primary-light: var(--color-zinc-600);
-  --primary-brand: #304c2c;
-  --primary-brand-light: #78b833;
+  --primary-brand: #13441f;
+  --primary-brand-light: #71bf44;
   --bg-light: #f0f8ff;
 
   --swiper-pagination-color: var(--primary-brand);
@@ -233,11 +233,6 @@ body {
   background-color: var(--bg-light);
   color: #32302f;
 }
-
-section {
-  padding-top: 160px;
-}
-
 .page-index {
   position: relative;
 }

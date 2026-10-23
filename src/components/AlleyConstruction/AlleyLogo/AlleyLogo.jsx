@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Logo() {
   return (
     <Link to="/">
-      <AlleyLogo width="150" fill="var(--primary-brand)" />
+      <AlleyLogo width="150" />
     </Link>
   );
 }
