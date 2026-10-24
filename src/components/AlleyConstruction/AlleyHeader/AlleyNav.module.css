@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   width: 70vw;
-  height: 100%;
+  height: 100vh;
   padding: 40px;
   background: var(--color-white);
   z-index: 100;
@@ -51,7 +51,7 @@
   padding: 10px;
   border-radius: 3px;
 
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: none;
   font-weight: 500;
   transition:
@@ -155,5 +155,9 @@
     gap: 40px;
     margin: 0;
     width: 100%;
+  }
+
+  .Link {
+    font-size: 1em;
   }
 }
