@@ -10,11 +10,9 @@ function Footer() {
           className={`${styles.FooterWrapper} flex justify-between flex-col md:flex-row`}
         >
           <span className="block font-bold text-white mb-2">
-            <AlleyLogo fill="white" />
+            <AlleyLogo width={300} />
           </span>
-          <div className="mt-4 md:mt-0">
-            <AlleyNav />
-          </div>
+          <div className="mt-4 md:mt-0">{/* <AlleyNav /> */}</div>
           <div className="mt-4 md:mt-0 text-sm">
             <div className="mt-4 md:mt-0 text-sm">
               <p className={styles.FooterCopyrights}>

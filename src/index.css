@@ -4,6 +4,7 @@
   --primary-brand: #13441f;
   --primary-brand-light: #71bf44;
   --bg-light: #f0f8ff;
+  --bg: #c2e1b0;
 
   --swiper-pagination-color: var(--primary-brand);
   --hero-gradient1: #b1b2b1;
@@ -230,7 +231,7 @@ body {
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
   color: #32302f;
 }
 .page-index {

@@ -16,50 +16,26 @@
   gap: 20px;
   align-items: center;
 }
+/* 
+.Overlay {
+  background-image: url(/src/assets/logo_alley-construction.svg);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-color: #e3ffea;
+  background-position: 30%;
+} */
 
 /* Гамбургер */
 .Hamburger {
   background: none;
   border: none;
-  color: var(--primary-brand);
+  color: var(--primary-brand-light);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
   z-index: 51;
-}
-
-/* Контейнер меню (обёртка) */
-.Nav {
-  position: fixed;
-  top: 0;
-  left: auto;
-  width: 70vw;
-  height: 100vh;
-  padding: 40px;
-  background: var(--color-white);
-  z-index: 100;
-  transition: right 0.3s ease-in-out;
-  overflow-y: auto;
-}
-
-.NavWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 15px;
-  /* border: 1px solid var(--primary-brand); */
-}
-
-/* Закрытое состояние: уводим вправо за экран */
-.NavClosed {
-  right: -100%;
-}
-
-/* Открытое состояние: ставим на 0 — меню на экране */
-.NavOpen {
-  right: 0;
 }
 
 /* Кнопка закрытия внутри меню */
@@ -84,100 +60,3 @@
   height: 24px;
   display: block;
 }
-
-/* Ссылки (NavLink) */
-.Link {
-  position: relative;
-  font-size: 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition:
-    color 0.2s,
-    opacity 0.2s;
-  text-transform: uppercase;
-  color: var(--primary-brand-light);
-  display: flex;
-}
-
-.NavMenu {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin: 0;
-  gap: 5px;
-  width: 100%;
-  border-bottom: 1px solid var(--primary-brand);
-
-  li {
-    padding: 10px;
-
-    &:hover {
-      background-color: var(--primary-brand-light);
-
-      .Link {
-        color: var(--color-white);
-      }
-    }
-  }
-}
-
-.NavMenuSeparator {
-  font-size: 10px;
-  color: var(--primary-brand);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-
-  ul {
-    border: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .Header {
-    background-color: var(--color-white);
-  }
-
-  .Nav {
-    max-width: 600px;
-  }
-
-  .NavMenu {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin: 0;
-    width: 100%;
-  }
-}
-
-/* .Hamburger {
-    display: none;
-  } */
-
-/* На планшетах и десктопе возвращаем поведение как раньше */
-/* .Nav {
-    position: static;
-    top: auto;
-    right: auto;
-    left: auto;
-    width: max-content;
-    height: auto;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-    flex-direction: row;
-    gap: 0;
-    z-index: auto;
-    justify-content: space-between;
-    transition: none;
-  } */
-
-/* Убираем кнопку закрытия из потока, потому что на десктопе меню всегда видно */
-/* .CloseButton {
-    display: none;
-  }
-
-  /* 
-  } */

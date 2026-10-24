@@ -46,7 +46,7 @@ function ProjectPage() {
   return (
     <>
       {/* Основная страница */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link
           to="/portfolio"
           className="inline-flex items-center text-sm text-gray-600 mb-6"
@@ -60,7 +60,9 @@ function ProjectPage() {
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               Фотоотчёт проекта
             </h3>
-            <div className={`${styles.GalleryGrid} grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2`}>
+            <div
+              className={`${styles.GalleryGrid} grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2`}
+            >
               {project.gallery.map((src, indx) => (
                 <div
                   key={indx}
@@ -104,9 +106,13 @@ function ProjectPage() {
             <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900">
               О проекте
             </h2>
-            <div>{project.details.map((i, indx) => (
-              <p key={indx} className="text-gray-700 leading-relaxed">{i}</p>
-            ))}</div>
+            <div>
+              {project.details.map((i, indx) => (
+                <p key={indx} className="text-gray-700 leading-relaxed">
+                  {i}
+                </p>
+              ))}
+            </div>
 
             <button className="mt-6 inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors">
               Запросить смету

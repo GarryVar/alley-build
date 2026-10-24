@@ -1,9 +1,7 @@
-import TelegramLogoIcon from '../../assets/icon/icon_telegram.svg?react';
+import TelegramLogoIcon from "../../assets/icon/icon_telegram.svg?react";
 
-function TelegramLogo() {
-    return (
-        <TelegramLogoIcon/>
-    )
+function TelegramLogo({ width, fill }) {
+  return <TelegramLogoIcon width={width} fill={fill} />;
 }
 
 export default TelegramLogo;

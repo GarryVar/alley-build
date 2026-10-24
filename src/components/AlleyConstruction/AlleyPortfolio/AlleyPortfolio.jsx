@@ -35,7 +35,7 @@ function AlleyPortfolio() {
               <p className="project__desc text-gray-600 text-sm line-clamp-3">
                 {project.desc}
               </p>
-              <span className="mt-4 text-sm font-medium text-indigo-600 inline-flex items-center">
+              <span className="mt-4 text-sm font-medium  inline-flex items-center">
                 Подробнее →
               </span>
             </div>

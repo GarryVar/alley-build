@@ -33,18 +33,18 @@ function AlleyCompany() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 px-4">
+    <section className={`${styles.Company} bg-gray-50`}>
       <div
-        className={`${styles.AlleyCompanyWrapper} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}
+        className={`${styles.Wrapper} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}
       >
-        <div className="text-center mb-8">
+        <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900">
             ООО «Аллея‑Строй»
           </h1>
         </div>
 
         <p
-          className={`${styles.AlleyCompanyDesc} text-xl font-medium px-2 py-1 rounded text-justify text-gray-600 mb-12`}
+          className={`${styles.Description} text-lg font-light px-2 py-1 rounded text-justify text-gray-600 mb-12`}
         >
           Мы — динамично развивающаяся компания из Евпатории (Республика Крым),
           которая объединяет производство и комплексное благоустройство. В нашем
@@ -68,9 +68,9 @@ function AlleyCompany() {
           const textOrderClass = idx % 2 === 0 ? "lg:order-2" : "lg:order-1";
 
           return (
-            <div
+            <article
               key={idx}
-              className="grid grid-cols-1 lg:grid-cols-[minmax(280px,1fr)_1fr] gap-8 items-start bg-white shadow-2xl rounded-2xl p-10"
+              className={`${styles.Article} grid grid-cols-1 lg:grid-cols-[minmax(280px,1fr)_1fr] gap-8 items-start bg-white shadow-2xl rounded-2xl p-10`}
             >
               {/* Блок с текстом */}
               <div className={`flex flex-col justify-center ${textOrderClass}`}>
@@ -79,13 +79,13 @@ function AlleyCompany() {
                   <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
                     Благоустройство общественных территорий
                   </h2>
-                  {item.text}
+                  <p classNAme={styles.AlleyCompany}>{item.text}</p>
                 </div>
               </div>
 
               {/* Блок с картинкой/галереей */}
               <div
-                className={`${styles.AlleyCompanyPicture} rounded-lg group relative ${pictureOrderClass}`}
+                className={`${styles.Gallery} rounded-lg group relative ${pictureOrderClass}`}
               >
                 {isGallery ? (
                   <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 p-1">
@@ -115,7 +115,7 @@ function AlleyCompany() {
                   </>
                 )}
               </div>
-            </div>
+            </article>
           );
         })}
       </div>

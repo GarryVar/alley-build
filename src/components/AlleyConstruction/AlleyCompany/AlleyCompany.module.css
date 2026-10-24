@@ -1,15 +1,38 @@
-.AlleyCompanyWrapper {
+.Company {
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-grey),
+    var(--color-white)
+  );
+}
+
+.Wrapper {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding-top: 60px;
 }
 
-.AlleyCompanyPicture {
+.Gallery {
   position: relative;
+  max-height: 400px;
+  overflow: auto;
 }
 
-.AlleyCompanyDesc {
+.Description {
   padding: 30px;
   /* border: 1px solid var(--primary-grey); */
   background-color: white;
+  border: 1px solid var(--primary-grey);
+}
+
+@media (min-width: 820px) {
+  .Article {
+    background-color: transparent;
+    box-shadow: none;
+
+    h2 {
+      text-align: left;
+    }
+  }
 }
