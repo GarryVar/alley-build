@@ -95,7 +95,7 @@
 
     .Link {
       &:hover {
-        background-color: var(--primary-brand-light);
+        background-color: var(--active);
         color: var(--color-white);
         border-radius: 0;
       }
@@ -105,7 +105,7 @@
 
 .Active {
   border-radius: 0;
-  background-color: var(--active);
+  background-color: var(--primary-brand-light);
   color: var(--color-white);
 }
 
