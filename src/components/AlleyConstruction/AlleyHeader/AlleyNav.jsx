@@ -28,6 +28,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
     { text: "Главная", href: "/" },
     { text: "Наши работы", href: "/portfolio" },
     { text: "О нас", href: "/company" },
+    { text: "Проекты", href: "/company" },
   ];
 
   return (

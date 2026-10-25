@@ -5,15 +5,15 @@
   left: auto;
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  width: 100vw;
   height: 100vh;
-  padding: 15px;
+  /* padding: 15px; */
   background: var(--color-white);
   z-index: 100;
   transition: right 0.3s ease-in-out;
   overflow-y: auto;
 
-  border-left: 1px solid var(--primary-grey);
+  /* border-left: 1px solid var(--primary-grey); */
 }
 
 .NavCloseButton {
@@ -52,7 +52,6 @@
   border-radius: 3px;
 
   font-size: 0.8rem;
-  text-decoration: none;
   font-weight: 500;
   transition:
     color 0.2s,
@@ -62,7 +61,7 @@
   display: flex;
 
   text-decoration: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 8px;
 }
 
 .NavMenu {
@@ -87,17 +86,21 @@
   }
 
   li {
+    border-radius: 3px;
+
     .Link {
       &:hover {
         background-color: var(--primary-brand-light);
         color: var(--color-white);
+        border-radius: 0;
       }
     }
   }
 }
 
 .Active {
-  background-color: var(--primary-brand-light);
+  border-radius: 0;
+  background-color: var(--active);
   color: var(--color-white);
 }
 
@@ -121,7 +124,6 @@
 }
 
 .NavBottomBar {
-  border-radius: 10px;
   background-color: var(--primary-brand-light);
 
   .NavMenuSeparator {
@@ -172,16 +174,21 @@
   }
 }
 
+@media (min-width: 540px) {
+  .Nav {
+    max-width: 70vw
+  }
+}
+
 @media (min-width: 768px) {
   .Nav {
-    max-width: 500px;
-    padding: 20px;
+    max-width: 60vw;
   }
 
   .NavMenu {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 10px;
     margin: 0;
     width: 100%;
   }
@@ -189,10 +196,10 @@
   .Link {
     font-size: 1em;
   }
-}
 
-@media (min-width: 1024px) {
-  .Nav {
-    padding: 20px;
+  .NavMenuSeparator {
+    p {
+      font-size: 1em;
+    }
   }
 }

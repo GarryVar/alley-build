@@ -5,6 +5,7 @@
   --primary-brand-light: #71bf44;
   --bg-light: #f0f8ff;
   --bg: #c2e1b0;
+  --active: #44bf85;
 
   --swiper-pagination-color: var(--primary-brand);
   --hero-gradient1: #b1b2b1;
@@ -234,6 +235,7 @@ body {
   background-color: var(--bg);
   color: #32302f;
 }
+
 .page-index {
   position: relative;
 }
