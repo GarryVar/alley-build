@@ -10,6 +10,12 @@
   padding-bottom: 60px;
 }
 
+.AlleyCompanyOrdersList {
+  li {
+    font-size: .7em;
+  }
+}
+
 .Gallery {
   position: relative;
 }
