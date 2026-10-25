@@ -76,7 +76,7 @@ function AlleyCompany() {
               <div className={`flex flex-col justify-center ${textOrderClass}`}>
                 <div className="text-lg text-gray-600 max-w-3xl text-justify leading-relaxed ">
                   {/* Заголовок можно вынести отдельно или оставить здесь */}
-                  <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+                  <h2 className="text-3xl font-bold text-center text-gray-800">
                     Благоустройство общественных территорий
                   </h2>
                   <p classNAme={styles.AlleyCompany}>{item.text}</p>
@@ -88,14 +88,14 @@ function AlleyCompany() {
                 className={`${styles.Gallery} rounded-lg group relative ${pictureOrderClass}`}
               >
                 {isGallery ? (
-                  <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 p-1">
+                  <div className={`${styles.GalleryWrapper} gap-10 p-1`}>
                     {item.images.map((imgSrc, i) => (
                       <img
                         key={i}
                         src={imgSrc}
                         alt={item.alt}
                         loading="lazy"
-                        className="w-full object-cover rounded-lg hover:scale-105 transition-transform duration-500"
+                        className="w-md object-cover rounded-lg transition-transform duration-500"
                       />
                     ))}
                   </div>

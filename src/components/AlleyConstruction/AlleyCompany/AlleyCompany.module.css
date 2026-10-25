@@ -1,29 +1,39 @@
 .Company {
-  background-image: linear-gradient(
-    90deg,
-    var(--primary-grey),
-    var(--color-white)
-  );
+  position: relative;
 }
 
 .Wrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   padding-top: 60px;
 }
 
 .Gallery {
   position: relative;
-  max-height: 400px;
-  overflow: auto;
+}
+
+.GalleryWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Description {
   padding: 30px;
-  /* border: 1px solid var(--primary-grey); */
-  background-color: white;
-  border: 1px solid var(--primary-grey);
+  font-size: 1em;
+}
+
+.Article {
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: .8em;
+    padding: 15px 0;
+    border-top: 1px solid var(--primary-grey);
+  }
 }
 
 @media (min-width: 820px) {

@@ -7,7 +7,7 @@
   flex-direction: column;
   width: 70vw;
   height: 100vh;
-  padding: 40px;
+  padding: 15px;
   background: var(--color-white);
   z-index: 100;
   transition: right 0.3s ease-in-out;
@@ -27,12 +27,12 @@
   justify-content: center;
   padding: 15px 0;
 }
+
 .NavWrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 15px;
-  /* border: 1px solid var(--primary-brand); */
+  gap: 20px;
+  height: 100%;
 }
 
 /* Закрытое состояние: уводим вправо за экран */
@@ -66,14 +66,25 @@
 }
 
 .NavMenu {
+  position: relative;
   display: flex;
   flex-direction: column;
   list-style: none;
   margin: 0;
   gap: 5px;
   width: 100%;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--primary-grey);
+  padding: 0 15px 20px 15px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background-color: var(--primary-grey);
+  }
 
   li {
     .Link {
@@ -90,6 +101,10 @@
   color: var(--color-white);
 }
 
+.NavInverters {
+  margin-top: auto;
+}
+
 .NavMenuSeparator {
   display: flex;
   flex-direction: column;
@@ -98,18 +113,24 @@
 
   p {
     width: 100%;
-    font-size: 1em;
+    font-size: .6em;
     letter-spacing: 2px;
     color: var(--primary-light);
+    padding: 0 15px;
   }
 }
 
 .NavBottomBar {
-  margin-top: auto;
+  border-radius: 10px;
+  background-color: var(--primary-brand-light);
 
   .NavMenuSeparator {
+    border-bottom: none;
+
     p {
+      padding: 15px;
       text-align: right;
+      color: var(--color-white);
     }
   }
 }
@@ -125,6 +146,12 @@
   .NavMenu {
     flex-direction: row;
     justify-content: end;
+
+    &::before {
+      content: '';
+      background-color: transparent;
+      height: 0;
+    }
   }
 }
 
@@ -134,8 +161,9 @@
   li {
     padding: 5px;
     border-radius: 5px;
+
     &:hover {
-      background-color: var(--primary-grey);
+      background-color: var(--primary-brand);
 
       .Link {
         color: var(--color-white);
@@ -147,6 +175,7 @@
 @media (min-width: 768px) {
   .Nav {
     max-width: 500px;
+    padding: 20px;
   }
 
   .NavMenu {
@@ -159,5 +188,11 @@
 
   .Link {
     font-size: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Nav {
+    padding: 20px;
   }
 }

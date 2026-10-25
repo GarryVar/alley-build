@@ -46,11 +46,12 @@ function AlleyNav({ toggleMenu, isOpen }) {
         <IconMenuClose width={25} />
       </button>
 
-      <div className={styles.NavTopBar}>
-        <AlleyLogo width={140} />
-      </div>
 
       <nav className={styles.NavWrapper}>
+        <div className={styles.NavTopBar}>
+          <AlleyLogo width={140} />
+        </div>
+
         <ul className={styles.NavMenu}>
           {mainLinks.map((item) => (
             <MenuItem
@@ -61,41 +62,41 @@ function AlleyNav({ toggleMenu, isOpen }) {
             />
           ))}
         </ul>
-
-        <div className={styles.NavMenuSeparator}>
-          <p>Наши подразделения</p>
-          <ul className={styles.NavMenu}>
-            <MenuItem
-              to="https://garryvar.github.io/inverter-energy/#home"
-              text="Солнечная энергия"
-              onClick={handleClick}
-            />
-          </ul>
-        </div>
-      </nav>
-
-      <div className={styles.NavBottomBar}>
-        <div className={styles.NavMenuSeparator}>
-          <p>Мы в соцсетях</p>
-          <div className={styles.NavSocials}>
+        <div className={styles.NavInverters}>
+          <div className={styles.NavMenuSeparator}>
+            <p>Наши подразделения</p>
             <ul className={styles.NavMenu}>
-              <li className={styles.Link}>
-                <Link to="/@telegram">
-                  <TelegramLogo
-                    width={25}
-                    fill={"var(--primary-brand-light)"}
-                  />
-                </Link>
-              </li>
-              <li className={styles.Link}>
-                <Link to="/@vk">
-                  <VkLogo width={25} fill={"var(--primary-brand-light)"} />
-                </Link>
-              </li>
+              <MenuItem
+                to="https://garryvar.github.io/inverter-energy/#home"
+                text="Солнечная энергия"
+                onClick={handleClick}
+              />
             </ul>
           </div>
         </div>
-      </div>
+        <div className={styles.NavBottomBar}>
+          <div className={styles.NavMenuSeparator}>
+            <p>Мы в соцсетях</p>
+            <div className={styles.NavSocials}>
+              <ul className={styles.NavMenu}>
+                <li className={styles.Link}>
+                  <Link to="/@telegram">
+                    <TelegramLogo
+                      width={25}
+                      fill={"var(--color-white)"}
+                    />
+                  </Link>
+                </li>
+                <li className={styles.Link}>
+                  <Link to="/@vk">
+                    <VkLogo width={25} fill={"var(--color-white)"} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }
