@@ -2,20 +2,34 @@
 .Nav {
   position: fixed;
   top: 0;
-  left: auto;
+  left: 0;
+  /* важно: left=0, а не auto */
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
   height: 100dvh;
-  /* padding: 15px; */
+  /* или 100svh, если хочешь стабильное значение */
   background: var(--color-white);
   z-index: 100;
-  transition: right 0.3s ease-in-out;
   overflow-y: auto;
 
-  /* border-left: 1px solid var(--primary-grey); */
+  /* Анимация только transform */
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Базовое состояние: закрыто (уезжает вправо за экран) */
+  transform: translateX(100%);
 }
+
+/* Открытое состояние: на экране */
+.NavOpen {
+  transform: translateX(0);
+}
+
+/* Закрытое состояние (можно оставить для ясности, но transform уже задан в .Nav) */
+.NavClosed {
+  transform: translateX(100%);
+}
+
 
 .NavCloseButton {
   top: 10px;
@@ -40,15 +54,6 @@
   height: 100%;
 }
 
-/* Закрытое состояние: уводим вправо за экран */
-.NavClosed {
-  right: -100%;
-}
-
-/* Открытое состояние: ставим на 0 — меню на экране */
-.NavOpen {
-  right: 0;
-}
 
 /* Ссылки (NavLink) */
 .Link {
