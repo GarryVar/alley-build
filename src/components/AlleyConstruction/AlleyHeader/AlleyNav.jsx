@@ -22,8 +22,7 @@ const MenuItem = ({ to, text, onClick }) => (
 
 function AlleyNav({ toggleMenu, isOpen }) {
   const menuRef = useRef(null);
-  // Передай этот ref в оверлей в AlleyHeader, чтобы прозрачность менялась синхронно
-  const overlayRef = useRef(null);
+  const overlayRef = useRef(null); // Передай этот ref в оверлей в AlleyHeader
 
   const [swipeState, setSwipeState] = useState({
     isSwiping: false,
@@ -57,7 +56,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
 
     const menuEl = menuRef.current;
     if (menuEl) {
-      // Двигаем ровно на смещение от точки старта — без анимации
+      // Двигаем строго за пальцем, отключаем CSS-анимацию
       menuEl.style.transform = `translateX(${diff}px)`;
       menuEl.style.transition = "none";
     }
@@ -77,13 +76,14 @@ function AlleyNav({ toggleMenu, isOpen }) {
     const menuEl = menuRef.current;
 
     if (menuEl) {
-      // Включаем CSS‑анимацию только для финального движения
+      // Включаем CSS-анимацию только для финального движения
       menuEl.style.transition = "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
 
       if (diff >= MIN_CLOSE_DISTANCE) {
-        // Закрываем: меню уезжает полностью вправо (за экран)
+        // Закрываем: меню уезжает за экран
         menuEl.style.transform = "translateX(100%)";
-        toggleMenu();
+        // Даём браузеру 1 кадр, чтобы анимация успела начаться, потом переключаем состояние
+        requestAnimationFrame(() => toggleMenu());
       } else {
         // Возвращаем на место (в ноль)
         menuEl.style.transform = "translateX(0)";
@@ -93,11 +93,15 @@ function AlleyNav({ toggleMenu, isOpen }) {
     setSwipeState({ isSwiping: false, startX: 0, currentX: 0 });
   };
 
-  // Если меню закрыли не свайпом (например, по оверлею или крестику) — сбрасываем инлайн-стили
+  // Если меню закрыли не свайпом — сбрасываем инлайн-стили, чтобы CSS-классы сработали корректно
   useEffect(() => {
-    if (!isOpen) {
-      const menuEl = menuRef.current;
-      if (menuEl) {
+    const menuEl = menuRef.current;
+    if (menuEl) {
+      if (!isOpen) {
+        menuEl.style.transform = "";
+        menuEl.style.transition = "";
+      } else {
+        // Когда меню открыто (не через свайп), убедимся, что оно стоит на месте
         menuEl.style.transform = "";
         menuEl.style.transition = "";
       }
@@ -110,6 +114,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      // Классы NavOpen/NavClosed оставляем: они нужны для обычного открытия/закрытия
       className={`${styles.Nav} ${isOpen ? styles.NavOpen : styles.NavClosed}`}
       role="navigation"
       aria-label="Главное меню"
