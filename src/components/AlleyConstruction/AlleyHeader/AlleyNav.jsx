@@ -28,7 +28,6 @@ function AlleyNav({ toggleMenu, isOpen }) {
     { text: "Главная", href: "/" },
     { text: "Наши работы", href: "/portfolio" },
     { text: "О нас", href: "/company" },
-    { text: "Проекты", href: "/company" },
   ];
 
   return (
@@ -50,7 +49,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
 
       <nav className={styles.NavWrapper}>
         <div className={styles.NavTopBar}>
-          <AlleyLogo width={140} />
+          <AlleyLogo width={180} />
         </div>
 
         <ul className={styles.NavMenu}>
