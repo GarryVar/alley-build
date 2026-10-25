@@ -22,7 +22,7 @@ const MenuItem = ({ to, text, onClick }) => (
 
 function AlleyNav({ toggleMenu, isOpen }) {
   const menuRef = useRef(null);
-  // Этот ref передай в оверлей в AlleyHeader (см. ниже)
+  // Передай этот ref в оверлей в AlleyHeader, чтобы прозрачность менялась синхронно
   const overlayRef = useRef(null);
 
   const [swipeState, setSwipeState] = useState({
@@ -33,8 +33,6 @@ function AlleyNav({ toggleMenu, isOpen }) {
 
   // Порог закрытия: если потянули больше этого — закрываем
   const MIN_CLOSE_DISTANCE = 80;
-  // Минимальный «рывок», чтобы считать, что свайп начался (защита от случайных касаний)
-  const MIN_SWIPE_START = 10;
 
   const handleLinkClick = () => toggleMenu();
 
@@ -49,7 +47,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
 
   const onTouchMove = (e) => {
     if (!swipeState.isSwiping) return;
-    e.preventDefault(); // не скроллим фон во время свайпа
+    e.preventDefault(); // чтобы фон не скроллился
 
     const touch = e.touches[0];
     const currentX = touch.clientX;
@@ -59,12 +57,12 @@ function AlleyNav({ toggleMenu, isOpen }) {
 
     const menuEl = menuRef.current;
     if (menuEl) {
-      // Двигаем ровно на смещение от точки старта
+      // Двигаем ровно на смещение от точки старта — без анимации
       menuEl.style.transform = `translateX(${diff}px)`;
-      menuEl.style.transition = "none"; // отключаем CSS-анимацию во время свайпа
+      menuEl.style.transition = "none";
     }
 
-    // Синхронизируем прозрачность оверлея с движением
+    // Синхронизируем прозрачность оверлея
     const overlayEl = overlayRef.current;
     if (overlayEl && diff > 0) {
       const opacity = Math.max(0, 1 - Math.min(1, diff / 200));
@@ -79,7 +77,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
     const menuEl = menuRef.current;
 
     if (menuEl) {
-      // Возвращаем CSS-анимацию для финального движения
+      // Включаем CSS‑анимацию только для финального движения
       menuEl.style.transition = "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
 
       if (diff >= MIN_CLOSE_DISTANCE) {
