@@ -22,6 +22,7 @@ const MenuItem = ({ to, text, onClick }) => (
 
 function AlleyNav({ toggleMenu, isOpen }) {
   const menuRef = useRef(null);
+  // Этот ref передай в оверлей в AlleyHeader (см. ниже)
   const overlayRef = useRef(null);
 
   const [swipeState, setSwipeState] = useState({
@@ -30,14 +31,13 @@ function AlleyNav({ toggleMenu, isOpen }) {
     currentX: 0,
   });
 
-  // Минимальное расстояние для срабатывания закрытия (в пикселях)
+  // Порог закрытия: если потянули больше этого — закрываем
   const MIN_CLOSE_DISTANCE = 80;
-  // Порог, когда уже считаем, что свайп «начался» (чтобы не дёргалось от лёгкого касания)
+  // Минимальный «рывок», чтобы считать, что свайп начался (защита от случайных касаний)
   const MIN_SWIPE_START = 10;
 
   const handleLinkClick = () => toggleMenu();
 
-  // --- Свайп: начало ---
   const onTouchStart = (e) => {
     const touch = e.touches[0];
     setSwipeState({
@@ -47,26 +47,24 @@ function AlleyNav({ toggleMenu, isOpen }) {
     });
   };
 
-  // --- Свайп: движение ---
   const onTouchMove = (e) => {
     if (!swipeState.isSwiping) return;
-    e.preventDefault(); // чтобы не скроллился фон во время свайпа
+    e.preventDefault(); // не скроллим фон во время свайпа
 
     const touch = e.touches[0];
     const currentX = touch.clientX;
     const diff = currentX - swipeState.startX;
 
-    // Обновляем состояние
     setSwipeState((prev) => ({ ...prev, currentX }));
 
-    // Двигаем меню инлайн-стилем
     const menuEl = menuRef.current;
     if (menuEl) {
+      // Двигаем ровно на смещение от точки старта
       menuEl.style.transform = `translateX(${diff}px)`;
-      menuEl.style.transition = "none"; // отключаем CSS-переход во время свайпа
+      menuEl.style.transition = "none"; // отключаем CSS-анимацию во время свайпа
     }
 
-    // Опционально: меняем прозрачность оверлея
+    // Синхронизируем прозрачность оверлея с движением
     const overlayEl = overlayRef.current;
     if (overlayEl && diff > 0) {
       const opacity = Math.max(0, 1 - Math.min(1, diff / 200));
@@ -74,31 +72,30 @@ function AlleyNav({ toggleMenu, isOpen }) {
     }
   };
 
-  // --- Свайп: конец ---
   const onTouchEnd = () => {
     if (!swipeState.isSwiping) return;
 
     const diff = swipeState.currentX - swipeState.startX;
-
     const menuEl = menuRef.current;
+
     if (menuEl) {
-      // Возвращаем CSS-анимацию
+      // Возвращаем CSS-анимацию для финального движения
       menuEl.style.transition = "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
 
       if (diff >= MIN_CLOSE_DISTANCE) {
-        // Закрываем меню
+        // Закрываем: меню уезжает полностью вправо (за экран)
+        menuEl.style.transform = "translateX(100%)";
         toggleMenu();
       } else {
-        // Возвращаем на место
+        // Возвращаем на место (в ноль)
         menuEl.style.transform = "translateX(0)";
       }
     }
 
-    // Сброс состояния
     setSwipeState({ isSwiping: false, startX: 0, currentX: 0 });
   };
 
-  // На случай, если меню закрыли не свайпом — сбрасываем инлайн-стили
+  // Если меню закрыли не свайпом (например, по оверлею или крестику) — сбрасываем инлайн-стили
   useEffect(() => {
     if (!isOpen) {
       const menuEl = menuRef.current;
@@ -115,7 +112,6 @@ function AlleyNav({ toggleMenu, isOpen }) {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      // Для десктопа можно добавить onMouseDown/Move/Up, если нужен трекпад-свайп
       className={`${styles.Nav} ${isOpen ? styles.NavOpen : styles.NavClosed}`}
       role="navigation"
       aria-label="Главное меню"
