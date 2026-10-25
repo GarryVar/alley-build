@@ -2,7 +2,7 @@ import pic01 from "../../../assets/alley-building/other/area/pic01.webp";
 import pic02 from "../../../assets/alley-building/other/area/pic02.webp";
 import pic03 from "../../../assets/alley-building/other/area/pic03.webp";
 import poliv from "../../../assets/alley-building/other/water/autopoliv.jpg";
-import autopoliv from "../../../assets/alley-building/other/water/autopoliv2.png"
+import autopoliv from "../../../assets/alley-building/other/water/autopoliv2.png";
 
 import styles from "./AlleyCompany.module.css";
 
@@ -57,7 +57,7 @@ function AlleyCompany() {
       <div
         className={`${styles.Wrapper} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}
       >
-        <div className="text-center">
+        <div className={` ${styles.TitleContainer} text-center`}>
           <h1 className="text-4xl font-bold text-gray-900">
             ООО «Аллея‑Строй»
           </h1>
@@ -92,7 +92,7 @@ function AlleyCompany() {
             >
               {/* Блок с текстом */}
               <div className={`flex flex-col justify-center ${textOrderClass}`}>
-                <div className="text-lg text-gray-600 max-w-3xl text-justify leading-relaxed">
+                <div className="text-lg text-gray-600 max-w-3xl leading-relaxed">
                   <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
                     {item.caption}
                   </h2>

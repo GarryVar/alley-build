@@ -8,11 +8,16 @@
   gap: 20px;
   padding-top: 60px;
   padding-bottom: 60px;
+
+  h1 {
+    text-transform: uppercase;
+  }
 }
+
 
 .AlleyCompanyOrdersList {
   li {
-    font-size: .7em;
+    font-size: 1em;
   }
 }
 
@@ -33,10 +38,13 @@
 .Article {
   h2 {
     margin-bottom: 20px;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
   p {
-    font-size: .8em;
+    font-size: 1em;
     padding: 15px 0;
     border-top: 1px solid var(--primary-grey);
   }

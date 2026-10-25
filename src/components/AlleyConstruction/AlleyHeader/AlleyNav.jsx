@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "../AlleyHeader/AlleyNav.module.css";
 import IconMenuClose from "../../SvgIcons/IconMenuClose";
 import AlleyLogo from "../AlleyLogo/AlleyLogo";
 import TelegramLogo from "../../SvgIcons/TelegramLogo";
 import VkLogo from "../../SvgIcons/VkLogo";
+import MaxLogo from "../../SvgIcons/MaxLogo";
 
+// Вспомогательный компонент для пункта меню (убирает дублирование className)
 const MenuItem = ({ to, text, onClick }) => (
   <li>
     <NavLink
@@ -21,104 +22,21 @@ const MenuItem = ({ to, text, onClick }) => (
 );
 
 function AlleyNav({ toggleMenu, isOpen }) {
-  const menuRef = useRef(null);
-  const overlayRef = useRef(null); // Передай этот ref в оверлей в AlleyHeader
+  const handleClick = () => onClose?.();
 
-  const [swipeState, setSwipeState] = useState({
-    isSwiping: false,
-    startX: 0,
-    currentX: 0,
-  });
-
-  // Порог закрытия: если потянули больше этого — закрываем
-  const MIN_CLOSE_DISTANCE = 80;
-
-  const handleLinkClick = () => toggleMenu();
-
-  const onTouchStart = (e) => {
-    const touch = e.touches[0];
-    setSwipeState({
-      isSwiping: true,
-      startX: touch.clientX,
-      currentX: touch.clientX,
-    });
-  };
-
-  const onTouchMove = (e) => {
-    if (!swipeState.isSwiping) return;
-    e.preventDefault(); // чтобы фон не скроллился
-
-    const touch = e.touches[0];
-    const currentX = touch.clientX;
-    const diff = currentX - swipeState.startX;
-
-    setSwipeState((prev) => ({ ...prev, currentX }));
-
-    const menuEl = menuRef.current;
-    if (menuEl) {
-      // Двигаем строго за пальцем, отключаем CSS-анимацию
-      menuEl.style.transform = `translateX(${diff}px)`;
-      menuEl.style.transition = "none";
-    }
-
-    // Синхронизируем прозрачность оверлея
-    const overlayEl = overlayRef.current;
-    if (overlayEl && diff > 0) {
-      const opacity = Math.max(0, 1 - Math.min(1, diff / 200));
-      overlayEl.style.opacity = opacity.toFixed(2);
-    }
-  };
-
-  const onTouchEnd = () => {
-    if (!swipeState.isSwiping) return;
-
-    const diff = swipeState.currentX - swipeState.startX;
-    const menuEl = menuRef.current;
-
-    if (menuEl) {
-      // Включаем CSS-анимацию только для финального движения
-      menuEl.style.transition = "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
-
-      if (diff >= MIN_CLOSE_DISTANCE) {
-        // Закрываем: меню уезжает за экран
-        menuEl.style.transform = "translateX(100%)";
-        // Даём браузеру 1 кадр, чтобы анимация успела начаться, потом переключаем состояние
-        requestAnimationFrame(() => toggleMenu());
-      } else {
-        // Возвращаем на место (в ноль)
-        menuEl.style.transform = "translateX(0)";
-      }
-    }
-
-    setSwipeState({ isSwiping: false, startX: 0, currentX: 0 });
-  };
-
-  // Если меню закрыли не свайпом — сбрасываем инлайн-стили, чтобы CSS-классы сработали корректно
-  useEffect(() => {
-    const menuEl = menuRef.current;
-    if (menuEl) {
-      if (!isOpen) {
-        menuEl.style.transform = "";
-        menuEl.style.transition = "";
-      } else {
-        // Когда меню открыто (не через свайп), убедимся, что оно стоит на месте
-        menuEl.style.transform = "";
-        menuEl.style.transition = "";
-      }
-    }
-  }, [isOpen]);
+  const mainLinks = [
+    { text: "Главная", href: "/" },
+    { text: "Наши работы", href: "/portfolio" },
+    { text: "О нас", href: "/company" },
+  ];
 
   return (
     <div
-      ref={menuRef}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
-      // Классы NavOpen/NavClosed оставляем: они нужны для обычного открытия/закрытия
       className={`${styles.Nav} ${isOpen ? styles.NavOpen : styles.NavClosed}`}
       role="navigation"
       aria-label="Главное меню"
     >
+      {/* Кнопка закрытия — в самом верху меню */}
       <button
         className={styles.NavCloseButton}
         type="button"
@@ -128,26 +46,22 @@ function AlleyNav({ toggleMenu, isOpen }) {
         <IconMenuClose width={25} />
       </button>
 
+
       <nav className={styles.NavWrapper}>
         <div className={styles.NavTopBar}>
           <AlleyLogo width={180} />
         </div>
 
         <ul className={styles.NavMenu}>
-          {[
-            { text: "Главная", href: "/" },
-            { text: "Наши работы", href: "/portfolio" },
-            { text: "О нас", href: "/company" },
-          ].map((item) => (
+          {mainLinks.map((item) => (
             <MenuItem
               key={item.href}
               to={item.href}
               text={item.text}
-              onClick={handleLinkClick}
+              onClick={handleClick}
             />
           ))}
         </ul>
-
         <div className={styles.NavInverters}>
           <div className={styles.NavMenuSeparator}>
             <p>Наши подразделения</p>
@@ -155,12 +69,11 @@ function AlleyNav({ toggleMenu, isOpen }) {
               <MenuItem
                 to="https://garryvar.github.io/inverter-energy/#home"
                 text="Солнечная энергия"
-                onClick={handleLinkClick}
+                onClick={handleClick}
               />
             </ul>
           </div>
         </div>
-
         <div className={styles.NavBottomBar}>
           <div className={styles.NavMenuSeparator}>
             <p>Мы в соцсетях</p>
@@ -168,7 +81,10 @@ function AlleyNav({ toggleMenu, isOpen }) {
               <ul className={styles.NavMenu}>
                 <li className={styles.Link}>
                   <Link to="/@telegram">
-                    <TelegramLogo width={25} fill={"var(--color-white)"} />
+                    <TelegramLogo
+                      width={25}
+                      fill={"var(--color-white)"}
+                    />
                   </Link>
                 </li>
                 <li className={styles.Link}>
