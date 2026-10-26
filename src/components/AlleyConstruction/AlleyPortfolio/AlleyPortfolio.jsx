@@ -3,10 +3,7 @@ import { projects } from "../AlleyPortfolio/projects";
 
 function AlleyPortfolio() {
   return (
-    <section
-      id="portfolio"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
-    >
+    <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
         Наши проекты
       </h2>
@@ -38,7 +35,7 @@ function AlleyPortfolio() {
               <p className="project__desc text-gray-600 text-sm line-clamp-3">
                 {project.desc}
               </p>
-              <span className="mt-4 text-sm font-medium text-indigo-600 inline-flex items-center">
+              <span className="mt-4 text-sm font-medium  inline-flex items-center">
                 Подробнее →
               </span>
             </div>

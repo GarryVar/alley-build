@@ -6,16 +6,15 @@ import Products from "../Products/Products";
 import Footer from "../Footer/Footer";
 
 function InverterHome() {
-    return (
-        <>
-            <Hero />
-            <Pain />
-            <Advantages />
-            <Products />
-            <Contacts />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Hero />
+      <Pain />
+      <Advantages />
+      <Products />
+      <Contacts />
+      <Footer />
+    </>
+  );
 }
-
 export default InverterHome;

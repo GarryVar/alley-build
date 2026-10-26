@@ -1,6 +1,7 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import HomePage from "./Pages/HomePage";
+import AlleyCompany from "./components/AlleyConstruction/AlleyCompany/AlleyCompany";
 import AlleyPortfolio from "./components/AlleyConstruction/AlleyPortfolio/AlleyPortfolio";
 import ProjectPage from "./components/AlleyConstruction/ProjectPage/ProjectPage"; // Импортируем страницу проекта
 
@@ -9,7 +10,7 @@ import "animate.css";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/">
       <Routes>
         {/* Главная страница: Layout оборачивает HomePage */}
         <Route
@@ -31,6 +32,15 @@ function App() {
           }
         />
 
+        <Route
+          path="/company"
+          element={
+            <Layout>
+              <AlleyCompany />
+            </Layout>
+          }
+        />
+
         {/* Страница отдельного проекта: Layout оборачивает ProjectPage */}
         {/* :id — это динамический параметр. /project/1, /project/2 и т.д. */}
         <Route
@@ -42,7 +52,7 @@ function App() {
           }
         />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

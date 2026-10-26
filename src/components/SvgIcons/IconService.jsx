@@ -1,9 +1,7 @@
-import Service from '../../assets/icon/icon_service.svg?react';
+import Service from "../../assets/icon/icon_service.svg?react";
 
 function IconService() {
-    return(
-        <Service/>
-    )
+  return <Service />;
 }
 
-export default IconService; 
+export default IconService;

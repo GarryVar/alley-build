@@ -1,5 +1,6 @@
 import styles from "./AlleyHero.module.css";
 import hero01 from "../../../assets/alley-building/hero01.webp";
+import { Link } from "react-router-dom";
 
 function AlleyHero() {
   return (
@@ -9,22 +10,20 @@ function AlleyHero() {
         <div className={styles.HeroImageLayer}>
           <img
             src={hero01}
-            alt="Благоустройство двора: детская площадка и пешеходные дорожки"
+            alt="Занимаемся благоустройством общественных пространств и уличных территорий"
             className={styles.HeroImg}
           />
         </div>
         {/* Текст поверх картинки */}
         <div className={styles.HeroContent}>
           <h1 className={styles.HeroTitle}>
-            Благоустройство уличных территорий.
+            <span>Аллея‑Строй</span> <br />
+            делаем город лучше.
           </h1>
           <p className={styles.HeroSubtitle}>
-            От детских площадок до пешеходных зон — делаем городскую среду
-            удобной и красивой. Рассчитаем проект под ваш бюджет и сроки.
+            Проектируем и благоустраиваем любые территории — от детской площадки
+            до микрорайона!
           </p>
-
-          {/* Пример кнопки (раскомментируй, когда добавишь Link) */}
-          {/* <Link to="/portfolio" className="btn btn--outline">Посмотреть работы</Link> */}
         </div>
       </div>
     </section>

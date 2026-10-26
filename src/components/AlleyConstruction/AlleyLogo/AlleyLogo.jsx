@@ -1,9 +1,9 @@
 import AlleyLogo from "../../../assets/logo_alley-construction.svg?react";
 import { Link } from "react-router-dom";
-function Logo() {
+function Logo({ width }) {
   return (
     <Link to="/">
-      <AlleyLogo width="150" fill="var(--primary-brand)" />
+      <AlleyLogo width={width} />
     </Link>
   );
 }

@@ -1,0 +1,216 @@
+/* Контейнер меню (обёртка) */
+.Nav {
+  position: fixed;
+  top: 0;
+  left: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  /* padding: 15px; */
+  background: var(--color-white);
+  z-index: 100;
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
+
+  /* border-left: 1px solid var(--primary-grey); */
+}
+
+.NavCloseButton {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+
+  svg {
+    color: var(--primary-brand-light);
+  }
+}
+
+.NavTopBar {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.NavWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Закрытое состояние: уводим вправо за экран */
+.NavClosed {
+  right: -100%;
+}
+
+/* Открытое состояние: ставим на 0 — меню на экране */
+.NavOpen {
+  right: 0;
+}
+
+/* Ссылки (NavLink) */
+.Link {
+  position: relative;
+  padding: 10px;
+  border-radius: 3px;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition:
+    color 0.2s,
+    opacity 0.2s;
+  text-transform: uppercase;
+  color: var(--primary-brand-light);
+  display: flex;
+
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.NavMenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  gap: 5px;
+  width: 100%;
+  padding: 0 15px 20px 15px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background-color: var(--primary-grey);
+  }
+
+  li {
+    border-radius: 3px;
+
+    .Link {
+      &:hover {
+        background-color: var(--active);
+        color: var(--color-white);
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.Active {
+  border-radius: 0;
+  background-color: var(--primary-brand-light);
+  color: var(--color-white);
+}
+
+.NavInverters {
+  margin-top: auto;
+}
+
+.NavMenuSeparator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  p {
+    width: 100%;
+    font-size: .6em;
+    letter-spacing: 2px;
+    color: var(--primary-light);
+    padding: 0 15px;
+  }
+}
+
+.NavBottomBar {
+  background-color: var(--primary-brand-light);
+
+  .NavMenuSeparator {
+    border-bottom: none;
+
+    p {
+      padding: 15px;
+      text-align: right;
+      color: var(--color-white);
+    }
+  }
+}
+
+.NavSocials {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .NavMenu {
+    flex-direction: row;
+    justify-content: end;
+
+    &::before {
+      content: '';
+      background-color: transparent;
+      height: 0;
+    }
+  }
+}
+
+.NavSocials .NavMenu {
+  gap: 10px;
+
+  li {
+    padding: 5px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: var(--primary-brand);
+
+      .Link {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  .Nav {
+    max-width: 70vw
+  }
+}
+
+@media (min-width: 768px) {
+  .Nav {
+    max-width: 60vw;
+  }
+
+  .NavMenu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .Link {
+    font-size: 1em;
+  }
+
+  .NavMenuSeparator {
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (min-width: 920px) {
+  .Nav {
+    max-width: 40vw;
+  }
+}

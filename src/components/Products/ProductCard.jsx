@@ -28,20 +28,19 @@ export function ProductCard({ product, onOrderClick }) {
         loading="lazy"
       />
       <div className="p-10">
-        {
-          (product.inStock ? (
-            <span
-              className={`${styles.productBadge} ${styles.inStock} inline-block  text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide mb-3`}
-            >
-              В наличии
-            </span>
-          ) : (
-            <span
-              className={`${styles.productBadge} ${styles.outStock} inline-block  text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide mb-3`}
-            >
-              Нет в наличии
-            </span>
-          ))}
+        {product.inStock ? (
+          <span
+            className={`${styles.productBadge} ${styles.inStock} inline-block  text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide mb-3`}
+          >
+            В наличии
+          </span>
+        ) : (
+          <span
+            className={`${styles.productBadge} ${styles.outStock} inline-block  text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide mb-3`}
+          >
+            Нет в наличии
+          </span>
+        )}
         <h3
           className={`${styles.productName} text-lg font-bold mb-2 text-gray-800 line-clamp-2`}
         >

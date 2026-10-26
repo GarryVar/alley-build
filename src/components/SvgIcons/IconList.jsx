@@ -1,9 +1,6 @@
-import IconList from '../../assets/icon/icon_list.svg?react';
+import IconList from "../../assets/icon/icon_list.svg?react";
 
 function IconWishList() {
-    return (
-        <IconList/>
-    )
+  return <IconList />;
 }
-
 export default IconWishList;

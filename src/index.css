@@ -1,9 +1,11 @@
 :root {
   --primary-grey: #dbdbdb;
   --primary-light: var(--color-zinc-600);
-  --primary-brand: #304c2c;
-  --primary-brand-light: #78b833;
+  --primary-brand: #13441f;
+  --primary-brand-light: #71bf44;
   --bg-light: #f0f8ff;
+  --bg: #c2e1b0;
+  --active: #44bf85;
 
   --swiper-pagination-color: var(--primary-brand);
   --hero-gradient1: #b1b2b1;
@@ -216,9 +218,10 @@
   }
 }
 
-h2 {
-  text-decoration: underline;
-  text-underline-offset: 15px;
+h1,
+h2,
+h3 {
+  color: var(--primary-brand-light);
 }
 
 html {
@@ -229,15 +232,8 @@ body {
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: var(--bg-light);
-}
-
-main {
-  margin-top: -110px;
-}
-
-section {
-  padding-top: 160px;
+  background-color: var(--bg);
+  color: #32302f;
 }
 
 .page-index {

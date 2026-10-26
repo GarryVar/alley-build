@@ -14,6 +14,7 @@ A clean, responsive landing page for a company specializing in inverter UPS syst
 ## 📩 Form Submissions
 
 Contact and order forms are seamlessly integrated:
+
 - **Option 1:** Powered by **Formspree** — submissions delivered directly to email.
 - **Option 2:** Backendless approach via **Vercel Functions** — flexible and serverless.
 
@@ -22,6 +23,7 @@ All submissions are sent straight to the company inbox, ensuring no lead is miss
 ## 🚀 Deployment
 
 Hosted on **Amvera** for:
+
 - Instant global CDN delivery.
 - Automatic SSL and optimized performance.
 - Effortless continuous deployment.
