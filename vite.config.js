@@ -5,5 +5,5 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [react(), tailwind(), svgr()],
-  base: "/alley-build/",
+  base: "/",
 });

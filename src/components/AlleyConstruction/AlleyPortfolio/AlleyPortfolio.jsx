@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; // Используем Link для переходов
+import { Link } from "react-router-dom";
 import { projects } from "../AlleyPortfolio/projects";
 
 function AlleyPortfolio() {
