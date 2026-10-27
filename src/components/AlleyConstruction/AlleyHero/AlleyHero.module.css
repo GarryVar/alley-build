@@ -4,8 +4,10 @@
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(var(--hero-gradient1),
-      var(--hero-gradient2));
+  background-image: linear-gradient(
+    var(--hero-gradient1),
+    var(--hero-gradient2)
+  );
 
   /* Ключевой момент: Hero заезжает вверх и перекрывает шапку */
   margin-top: -90px;
@@ -29,6 +31,8 @@
   height: 100%;
   z-index: 1;
   overflow: hidden;
+  background-color: color-mix(in oklab, #ffffff 75%, transparent);
+  backdrop-filter: blur(12px);
 }
 
 .HeroImg {
@@ -78,8 +82,7 @@
   text-align: center;
 }
 
-
-@media(min-width: 420px) {
+@media (min-width: 420px) {
   .HeroTitle {
     font-size: 2rem;
 
@@ -89,8 +92,7 @@
   }
 }
 
-
-@media(min-width: 520px) {
+@media (min-width: 520px) {
   .HeroTitle {
     font-size: 2.2rem;
     text-align: left;
@@ -101,8 +103,7 @@
   }
 }
 
-
-@media(min-width: 620px) {
+@media (min-width: 620px) {
   .HeroTitle {
     font-size: 2.2rem;
     text-align: left;
