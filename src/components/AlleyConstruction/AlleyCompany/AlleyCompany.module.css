@@ -1,104 +1,104 @@
 .Company {
-  position: relative;
+	position: relative;
 }
 
 .Wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 
-  h1 {
-    position: absolute;
-    top: 60px;
-    text-transform: uppercase;
-    color: white;
-    font-size: 4rem;
-    z-index: 40;
-  }
+	h1 {
+		position: absolute;
+		top: 60px;
+		text-transform: uppercase;
+		color: white;
+		font-size: 4rem;
+		z-index: 40;
+	}
 }
 
 .TitleContainer {
-  position: relative;
-  text-align: center;
-  min-height: 600px;
-  background-color: var(--bg);
-  border-radius: 20px;
-  position: relative;
-  background-image: url("../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark11.webp");
-  background-size: cover;
-  filter: contrast(0.5);
-  overflow: hidden
+	position: relative;
+	text-align: center;
+	min-height: 600px;
+	background-color: var(--bg);
+	border-radius: 20px;
+	position: relative;
+	background-image: url("../../../assets/alley-building/child-park-simferopol/gallery/gallery_childpark11.webp");
+	background-size: cover;
+	filter: contrast(0.5);
+	overflow: hidden
 }
 
 
 .AlleyCompanyOrdersList {
-  li {
-    font-size: 1em;
-  }
+	li {
+		font-size: 1em;
+	}
 }
 
 .Gallery {
-  position: relative;
+	position: relative;
 }
 
 .GalleryWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .Description {
-  font-size: 1em;
+	font-size: 1em;
 }
 
 .Article {
-  h2 {
-    padding-bottom: 20px;
-    font-size: 1.2em;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 1.5;
-  }
+	h2 {
+		padding-bottom: 20px;
+		font-size: 1.2em;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		line-height: 1.5;
+	}
 
-  p {
-    font-size: 1em;
-    padding: 15px 0;
-    border-top: 1px solid var(--primary-grey);
-  }
+	p {
+		font-size: 1em;
+		padding: 15px 0;
+		border-top: 1px solid var(--primary-grey);
+	}
 }
 
 @media(min-width: 520px) {
-  .Gallery {
-    img {
-      width: 350px;
-      background-color: var(--bg);
-      min-height: 300px;
-    }
-  }
+	.Gallery {
+		img {
+			width: 350px;
+			background-color: var(--bg);
+			min-height: 300px;
+		}
+	}
 }
 
 @media (min-width: 820px) {
-  .Article {
-    box-shadow: none;
+	.Article {
+		box-shadow: none;
 
-    h2 {
-      text-align: left;
-      font-size: 2.2rem;
-      background-color: var(--color-gray-50);
-    }
-  }
+		h2 {
+			text-align: left;
+			font-size: 2.2rem;
+			background-color: var(--color-gray-50);
+		}
+	}
 }
 
 @media(min-width: 1024px) {
-  .Article {
-    min-height: 1200px;
-  }
+	.Article {
+		min-height: 1200px;
+	}
 
-  .ColText {
-    position: sticky;
-    top: 40px;
-    z-index: 2;
-  }
+	.ColText {
+		position: sticky;
+		top: 40px;
+		z-index: 2;
+	}
 }
