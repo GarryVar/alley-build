@@ -3,6 +3,7 @@ import pic02 from "../../../assets/alley-building/other/area/pic02.webp";
 import pic03 from "../../../assets/alley-building/other/area/pic03.webp";
 import poliv from "../../../assets/alley-building/other/water/autopoliv.jpg";
 import autopoliv from "../../../assets/alley-building/other/water/autopoliv2.png";
+import autopoliv02 from "../../../assets/alley-building/other/water/autopoliv03.jpg";
 
 import styles from "./AlleyCompany.module.css";
 
@@ -10,6 +11,8 @@ function AlleyCompany() {
   const items = [
     {
       side: "left",
+      bg: "#48eb",
+      animation: 'animate__animated animate__fadeInDown',
       images: [pic01, pic02, pic03],
       alt: "Благоустройство территории",
       caption: "Комплексное благоустройство общественных пространств",
@@ -18,6 +21,8 @@ function AlleyCompany() {
     },
     {
       side: "right",
+      bg: "#4d2b",
+      animation: 'animate__animated aanimate__fadeInUp',
       images: [
         "/images/about-2.jpg",
         "/images/about-3.jpg",
@@ -30,6 +35,8 @@ function AlleyCompany() {
     },
     {
       side: "left",
+      bg: "#ae1e",
+      animation: 'animate__animated animate__fadeInRight',
       images: ["/images/about-5.jpg"],
       alt: "Освещение и световые сценарии",
       caption: "Проектирование и монтаж освещения",
@@ -38,7 +45,9 @@ function AlleyCompany() {
     },
     {
       side: "left",
-      images: [poliv, autopoliv],
+      bg: "#2e4b",
+      animation: 'animate__animated animate__animated',
+      images: [poliv, autopoliv, autopoliv02],
       alt: "Проектирование и установка систем автополива",
       caption: "Установка системы автополива",
       orderList: [
@@ -63,7 +72,7 @@ function AlleyCompany() {
           </h1>
         </div>
 
-        <p
+        {/* <p
           className={`${styles.Description} text-lg font-light px-2 py-1 rounded text-justify text-gray-600 mb-12`}
         >
           Мы — динамично развивающаяся компания из Евпатории (Республика Крым),
@@ -78,7 +87,7 @@ function AlleyCompany() {
           проще, а результат — стабильным. Мы не просто выполняем работы, а
           решаем задачи клиента: от проектирования до финальной реализации, с
           контролем качества на каждом этапе.
-        </p>
+        </p> */}
 
         {items.map((item, idx) => {
           const isGallery = item.images.length > 1;
@@ -88,16 +97,16 @@ function AlleyCompany() {
           return (
             <article
               key={idx}
-              className={`${styles.Article} grid grid-cols-1 lg:grid-cols-[minmax(280px,1fr)_1fr] gap-8 items-start bg-white shadow-2xl rounded-2xl p-5`}
+              className={`${styles.Article} grid grid-cols-1 lg:grid-cols-[minmax(280px,1fr)_1fr] bg-[${item.bg}] gap-5 items-start shadow-2xl rounded-2xl p-5`}
             >
               {/* Блок с текстом */}
-              <div className={`flex flex-col justify-center ${textOrderClass}`}>
+              <div className={`${styles.ColText} flex flex-col justify-center ${textOrderClass}`}>
                 <div className="text-lg text-gray-600 max-w-3xl leading-relaxed">
                   <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
                     {item.caption}
                   </h2>
 
-                  <p className={styles.AlleyCompany}>{item.text}</p>
+                  <p className={`${styles.AlleyCompany} animate__animated animate__fadeInUp`}>{item.text}</p>
 
                   {/* Рендер списка, только если orderList существует и не пустой */}
                   {item.orderList && item.orderList.length > 0 && (
@@ -126,8 +135,7 @@ function AlleyCompany() {
                         key={i}
                         src={imgSrc}
                         alt={item.alt}
-                        loading="lazy"
-                        className="w-full object-cover rounded-lg transition-transform duration-500"
+                        className={`${item.animation} w-full object-cover rounded-lg transition-transform duration-500`}
                       />
                     ))}
                   </div>

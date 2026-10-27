@@ -17,9 +17,9 @@ function AlleyHero() {
         {/* Текст поверх картинки */}
         <div className={styles.HeroContent}>
           <h1 className={styles.HeroTitle}>
-            <span>Аллея‑Строй</span>  <br />делаем город лучше.
+            <span className="animate__animated animate__fadeInLeft">Аллея‑Строй</span>  <br />делаем город лучше.
           </h1>
-          <p className={styles.HeroSubtitle}>
+          <p className={`${styles.HeroSubtitle} animate__animated animate__fadeInRight`}>
             Проектируем и благоустраиваем любые территории — от детской площадки до микрорайона!
           </p>
         </div>
