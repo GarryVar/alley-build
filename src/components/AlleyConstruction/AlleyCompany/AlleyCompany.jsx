@@ -11,14 +11,14 @@ import metalPic11 from "../../../assets/alley-building/other/area/pic11.webp";
 import metalPic12 from "../../../assets/alley-building/other/area/pic12.webp";
 import metalPic13 from "../../../assets/alley-building/other/area/pic13.webp";
 
+import lightPic14 from "../../../assets/alley-building/other/area/light01.png";
+
 import styles from "./AlleyCompany.module.css";
 
 function AlleyCompany() {
   const items = [
     {
       side: "left",
-      bg: "#48eb",
-      animation: "animate__animated",
       images: [pic01, pic02, pic03],
       alt: "Благоустройство территории",
       caption: "Комплексное благоустройство общественных пространств",
@@ -29,7 +29,6 @@ function AlleyCompany() {
 
     {
       side: "left",
-      bg: "#2e4b",
       images: [poliv, autopoliv, autopoliv02],
       alt: "Проектирование и установка систем автополива",
       caption: "Установка системы автополива",
@@ -61,7 +60,7 @@ function AlleyCompany() {
 
     {
       side: "left",
-      images: ["/images/about-5.jpg"],
+      images: [lightPic14],
       alt: "Освещение и световые сценарии",
       caption: "Проектирование и монтаж освещения",
       text: "В спектр наших услуг входят проектирование световых сценариев и монтаж систем освещения — чтобы пространство было не только функциональным, но и комфортным для людей. Наша задача — детально разобрать запрос клиента и сопровождать проект на всех стадиях.",
@@ -169,35 +168,22 @@ function AlleyCompany() {
               <div
                 className={`${styles.Gallery} rounded-lg group relative ${pictureOrderClass}`}
               >
-                {isGallery ? (
+                {
                   <div className={`${styles.GalleryWrapper} gap-8 p-1`}>
                     {item.images.map((imgSrc, i) => (
                       <img
-                        data-aos="fade"
-                        data-aos-duration="700"
-                        data-aos-delay="200"
                         key={i}
                         src={imgSrc}
                         alt={item.alt}
+                        loading="lazy"
+                        data-aos="fade"
+                        data-aos-duration="700"
+                        data-aos-delay="200"
                         className={`${item.animation} w-full object-cover rounded-lg transition-transform duration-500`}
                       />
                     ))}
                   </div>
-                ) : (
-                  <>
-                    <img
-                      src={""}
-                      alt={item.alt}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
-                    />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="text-sm font-medium text-white bg-black/60 px-2 py-1 rounded">
-                        {item.caption}
-                      </div>
-                    </div>
-                  </>
-                )}
+                }
               </div>
             </article>
           );
