@@ -11,7 +11,7 @@ import metalPic11 from "../../../assets/alley-building/other/area/pic11.webp";
 import metalPic12 from "../../../assets/alley-building/other/area/pic12.webp";
 import metalPic13 from "../../../assets/alley-building/other/area/pic13.webp";
 
-import lightPic14 from "../../../assets/alley-building/other/area/light01.png";
+import lightPic14 from "../../../assets/alley-building/other/area/light01.webp";
 
 import styles from "./AlleyCompany.module.css";
 
