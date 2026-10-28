@@ -27,25 +27,25 @@
   height: 100%;
   z-index: 1;
 
-  background-image: url("../../../assets/alley-building/hero01.png");
+  background-image: url("../../../assets/alley-building/hero01.webp");
   background-size: cover;
 }
 
 @media (min-width: 941px) {
   .HeroImageLayer {
-    background-image: url("../../../assets/alley-building/hero_wide.png");
+    background-image: url("../../../assets/alley-building/hero_wide.webp");
   }
 }
 
 @media (min-width: 1110px) {
   .HeroImageLayer {
-    background-image: url("../../../assets/alley-building/hero_lg_wide.png");
+    background-image: url("../../../assets/alley-building/hero_lg_wide.webp");
   }
 }
 
 @media (min-width: 1245px) {
   .HeroImageLayer {
-    background-image: url("../../../assets/alley-building/hero_xl_wide.png");
+    background-image: url("../../../assets/alley-building/hero_xl_wide.webp");
   }
 }
 
