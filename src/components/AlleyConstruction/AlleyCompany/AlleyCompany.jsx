@@ -121,7 +121,7 @@ function AlleyCompany() {
                     data-aos="fade"
                     data-aos-duration="500"
                     data-aos-delay="200"
-                    className="text-3xl font-bold text-center text-gray-800 mb-4"
+                    className="text-3xl font-bold text-center text-gray-800 mb-4 text-justify"
                   >
                     {item.caption}
                   </h2>
@@ -130,7 +130,7 @@ function AlleyCompany() {
                     data-aos="fade"
                     data-aos-duration="700"
                     data-aos-delay="200"
-                    className={styles.AlleyCompany}
+                    className={`${styles.AlleyCompany} text-justify`}
                   >
                     {item.text}
                   </p>
