@@ -40,10 +40,6 @@
 @media (min-width: 1000px) {
   .about__grid {
     grid-template-columns: 1fr 1fr;
-    background-image: url("../../../assets/logo_alley-construction.svg");
-    background-size: 600px 200px;
-    background-position: 96% 90%;
-    background-repeat: no-repeat;
   }
 
   .about__gallery--2 {
