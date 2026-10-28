@@ -5,11 +5,6 @@
   padding: 2rem 1rem;
 }
 
-.GalleryGrid {
-  max-height: 260px;
-  overflow: auto;
-}
-
 .BackLink {
   display: inline-block;
   color: #64748b;
@@ -28,15 +23,21 @@
   gap: 1.5rem;
 }
 
+.ProjectGallery {
+  position: relative;
+}
+
+.ProjectDesc {
+  position: sticky;
+  top: 40px;
+  z-index: 2;
+  align-self: start;
+}
+
 @media (min-width: 768px) {
   .ProjectCard {
     flex-direction: row;
     align-items: flex-start;
-  }
-
-  .GalleryGrid {
-    height: 100%;
-    overflow: none;
   }
 }
 

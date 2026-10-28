@@ -10,6 +10,7 @@
   padding-bottom: 60px;
 
   h1 {
+    margin: 0;
     position: absolute;
     top: 60px;
     text-transform: uppercase;
@@ -32,8 +33,39 @@
 }
 
 .AlleyCompanyOrdersList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+
   li {
+    padding: 45px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid var(--primary-grey);
     font-size: 1em;
+    font-size: 18px;
+    margin: 0;
+    /* background-color: aliceblue; */
+
+    .OrderListIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      position: absolute;
+      font-size: 25px;
+      top: 0;
+      left: 0;
+      /* transform: translate(-50%); */
+      background-color: #f9fafb;
+      border-radius: 5px;
+      border: 1px solid var(--primary-grey);
+      box-shadow:
+        0px 0px 0px 10px #f9fafb,
+        2px 2px 0px 9px var(--primary-grey);
+    }
   }
 }
 
@@ -74,6 +106,10 @@
       background-color: var(--bg);
       min-height: 300px;
     }
+  }
+
+  .AlleyCompanyOrdersList {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

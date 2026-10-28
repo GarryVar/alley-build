@@ -202,8 +202,13 @@
 h1,
 h2,
 h3 {
+  text-transform: uppercase;
   color: var(--primary-brand-light);
 }
+
+/* h3 {
+  text-transform: capitalize;
+} */
 
 html {
   scroll-behavior: smooth;
