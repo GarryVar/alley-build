@@ -19,7 +19,7 @@ function AlleyHero() {
         <div className={styles.HeroContent}>
           <h1
             data-aos="fade"
-            data-aos-duration="800"
+            data-aos-duration="400"
             className={styles.HeroTitle}
           >
             <span>Аллея‑Строй</span> <br />
@@ -28,6 +28,7 @@ function AlleyHero() {
           <p
             data-aos="fade"
             data-aos-duration="800"
+            data-aos-delay="600"
             className={styles.HeroSubtitle}
           >
             Проектируем и благоустраиваем любые территории — от детской площадки

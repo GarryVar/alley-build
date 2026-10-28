@@ -2,9 +2,8 @@
   width: 100%;
   max-width: 100%;
   padding: 8px 24px;
-  /* background-color: var(--color-white); */
-  background-color: color-mix(in oklab, #ffffff 75%, transparent);
-  backdrop-filter: blur(12px);
+  background-color: var(--color-white);
+
   z-index: 50;
   margin: 0 auto;
 }
@@ -16,14 +15,10 @@
   align-items: center;
 }
 
-/* 
 .Overlay {
-  background-image: url(/src/assets/logo_alley-construction.svg);
-  background-size: 300px;
-  background-repeat: no-repeat;
-  background-color: #e3ffea;
-  background-position: 30%;
-} */
+  background-color: color-mix(in oklab, #070606b7 75%, transparent);
+  backdrop-filter: blur(12px);
+}
 
 /* Гамбургер */
 .Hamburger {

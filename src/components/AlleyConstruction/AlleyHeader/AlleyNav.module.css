@@ -9,7 +9,9 @@
   height: 100vh;
   height: 100dvh;
   /* padding: 15px; */
-  background: var(--color-white);
+  /* background: var(--color-white); */
+  background-color: color-mix(in oklab, #ffffff 80%, transparent);
+  backdrop-filter: blur(12px);
 
   backdrop-filter: blur(12px);
   z-index: 100;

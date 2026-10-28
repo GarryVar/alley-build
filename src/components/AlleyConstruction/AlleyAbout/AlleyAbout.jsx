@@ -87,14 +87,14 @@ function AlleyAbout() {
           {/* Текстовая часть */}
           <div className="about__text">
             <h2
-              data-aos="fade-in-left"
+              data-aos="fade"
               data-aos-duration="800"
               className="text-5xl font-bold text-center mb-6 text-gray-800"
             >
               Почему выбирают нас
             </h2>
             <p
-              data-aos="fade-in-right"
+              data-aos="fade"
               data-aos-duration="800"
               data-aos-delay="200"
               className="mb-8 text-gray-600 leading-relaxed"
@@ -113,7 +113,7 @@ function AlleyAbout() {
               {benefits.map((item, i) => (
                 <li key={i} data-reveal="true" className="relative flex gap-5">
                   <span
-                    data-aos="fade-in-right"
+                    data-aos="fade"
                     data-aos-duration="500"
                     data-aos-delay="200"
                     className="text-white font-display tnum relative grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#71bf44] text-[14px] font-bold text-lime"
@@ -121,7 +121,7 @@ function AlleyAbout() {
                     {item.num}
                   </span>
                   <div
-                    data-aos="slide-left"
+                    data-aos="fade"
                     data-aos-duration="900"
                     className="pt-1.5"
                   >
@@ -133,7 +133,7 @@ function AlleyAbout() {
                       {item.title}
                     </h3>
                     <p
-                      data-aos="fade-in-right"
+                      data-aos="fade"
                       data-aos-duration="500"
                       data-aos-delay="200"
                       className="mt-1.5 text-[#4a4a55]"
