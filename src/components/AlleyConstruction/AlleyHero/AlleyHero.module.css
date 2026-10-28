@@ -3,11 +3,7 @@
   height: 100vh;
   min-height: 600px;
   position: relative;
-  overflow: hidden;
-  background-image: linear-gradient(
-    var(--hero-gradient1),
-    var(--hero-gradient2)
-  );
+  /* overflow: hidden; */
 
   /* Ключевой момент: Hero заезжает вверх и перекрывает шапку */
   margin-top: -90px;
@@ -24,24 +20,40 @@
 }
 
 .HeroImageLayer {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  overflow: hidden;
-  background-color: color-mix(in oklab, #ffffff 75%, transparent);
-  backdrop-filter: blur(12px);
+
+  background-image: url("../../../assets/alley-building/hero01.png");
+  background-size: cover;
+}
+
+@media (min-width: 941px) {
+  .HeroImageLayer {
+    background-image: url("../../../assets/alley-building/hero_wide.png");
+  }
+}
+
+@media (min-width: 1110px) {
+  .HeroImageLayer {
+    background-image: url("../../../assets/alley-building/hero_lg_wide.png");
+  }
+}
+
+@media (min-width: 1245px) {
+  .HeroImageLayer {
+    background-image: url("../../../assets/alley-building/hero_xl_wide.png");
+  }
 }
 
 .HeroImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Картинка заполняет весь блок, не искажаясь */
   display: block;
-  filter: contrast(0.5);
 }
 
 .HeroContent {

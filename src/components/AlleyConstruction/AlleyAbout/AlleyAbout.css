@@ -47,3 +47,13 @@
     grid-row: 1;
   }
 }
+
+.about-wide-swiper-next,
+.about-wide-swiper-prev,
+.about-album-swiper-next,
+.about-album-swiper-prev,
+.popup-swiper-button-next,
+.popup-swiper-button-prev {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* и т.д. */
+}

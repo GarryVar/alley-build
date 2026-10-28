@@ -69,11 +69,16 @@ function AlleyCompany() {
       <div
         className={`${styles.Wrapper} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}
       >
-        <div className={` ${styles.TitleContainer} text-center`}>
-          <h1 className="text-4xl font-bold text-gray-900">
+        {/* <div className={` ${styles.TitleContainer} text-center`}>
+          <h1
+            data-aos="fade"
+            data-aos-duration="500"
+            data-aos-delay="200"
+            className="text-4xl font-bold text-gray-900"
+          >
             ООО «Аллея‑Строй»
           </h1>
-        </div>
+        </div> */}
 
         {/* <p
           className={`${styles.Description} text-lg font-light px-2 py-1 rounded text-justify text-gray-600 mb-12`}
@@ -107,12 +112,20 @@ function AlleyCompany() {
                 className={`${styles.ColText} flex flex-col justify-center ${textOrderClass}`}
               >
                 <div className="text-lg text-gray-600 max-w-3xl leading-relaxed">
-                  <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
+                  <h2
+                    data-aos="fade"
+                    data-aos-duration="500"
+                    data-aos-delay="200"
+                    className="text-3xl font-bold text-center text-gray-800 mb-4"
+                  >
                     {item.caption}
                   </h2>
 
                   <p
-                    className={`${styles.AlleyCompany} animate__animated animate__fadeInUp`}
+                    data-aos="fade"
+                    data-aos-duration="700"
+                    data-aos-delay="200"
+                    className={styles.AlleyCompany}
                   >
                     {item.text}
                   </p>
@@ -130,7 +143,14 @@ function AlleyCompany() {
 
                   {/* Рендер text2, только если он существует и не пустая строка */}
                   {item.text2 && item.text2.trim() !== "" && (
-                    <p className="mt-4 text-gray-600">{item.text2}</p>
+                    <p
+                      data-aos="fade"
+                      data-aos-duration="700"
+                      data-aos-delay="200"
+                      className="mt-4 text-gray-600"
+                    >
+                      {item.text2}
+                    </p>
                   )}
                 </div>
               </div>
@@ -143,6 +163,9 @@ function AlleyCompany() {
                   <div className={`${styles.GalleryWrapper} gap-8 p-1`}>
                     {item.images.map((imgSrc, i) => (
                       <img
+                        data-aos="fade"
+                        data-aos-duration="700"
+                        data-aos-delay="200"
                         key={i}
                         src={imgSrc}
                         alt={item.alt}
