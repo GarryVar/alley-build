@@ -154,7 +154,7 @@ function AlleyAbout() {
             className="about__gallery relative overflow-hidden rounded-xl"
           >
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               spaceBetween={16}
               slidesPerView={1}
               loop
@@ -162,7 +162,7 @@ function AlleyAbout() {
                 nextEl: ".about-wide-swiper-next",
                 prevEl: ".about-wide-swiper-prev",
               }}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              // autoplay={{ delay: 4000, disableOnInteraction: false }}
               breakpoints={{
                 640: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
@@ -200,7 +200,7 @@ function AlleyAbout() {
             className="about__gallery about__gallery--2 relative overflow-hidden rounded-xl mt-8 md:mt-0"
           >
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               spaceBetween={16}
               slidesPerView={1}
               loop
@@ -208,7 +208,7 @@ function AlleyAbout() {
                 nextEl: ".about-album-swiper-next",
                 prevEl: ".about-album-swiper-prev",
               }}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              // autoplay={{ delay: 2000, disableOnInteraction: false }}
               breakpoints={{
                 640: { slidesPerView: 1 },
                 768: { slidesPerView: 1 },
@@ -219,11 +219,11 @@ function AlleyAbout() {
               {ALBUM_IMAGES.map((i) => (
                 <SwiperSlide key={i.id}>
                   <div
-                    className="overflow-hidden rounded-xl cursor-pointer"
+                    className="overflow-hidden rounded-xl"
                     onClick={() => openLightbox(i.id)}
                   >
                     <img
-                      className="object-cover transition-transform duration-300 hover:scale-105"
+                      className="object-cover transition-transform duration-300s"
                       src={i.src}
                       alt={i.alt}
                     />
