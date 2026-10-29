@@ -27,7 +27,7 @@ function AlleyHero() {
           </h1>
           <p
             data-aos="fade"
-            data-aos-duration="800"
+            data-aos-duration="600"
             data-aos-delay="600"
             className={styles.HeroSubtitle}
           >

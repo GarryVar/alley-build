@@ -30,6 +30,7 @@
   background-image: url("../../../assets/alley-building/hero01.webp");
   background-size: cover;
   background-position-x: 50%;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 941px) {

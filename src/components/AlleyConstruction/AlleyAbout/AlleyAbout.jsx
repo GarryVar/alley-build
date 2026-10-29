@@ -153,38 +153,7 @@ function AlleyAbout() {
             data-aos-delay="200"
             className="about__gallery relative overflow-hidden rounded-xl"
           >
-            <Swiper
-              modules={[Navigation, Pagination]}
-              spaceBetween={16}
-              slidesPerView={1}
-              loop
-              navigation={{
-                nextEl: ".about-wide-swiper-next",
-                prevEl: ".about-wide-swiper-prev",
-              }}
-              // autoplay={{ delay: 4000, disableOnInteraction: false }}
-              breakpoints={{
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 1 },
-              }}
-              className="pb-8"
-            >
-              {WIDE_IMAGES.map((i) => (
-                <SwiperSlide key={i.id}>
-                  <div
-                    className="overflow-hidden rounded-xl cursor-pointer"
-                    onClick={() => openLightbox(i.id)}
-                  >
-                    <img
-                      className="w-full object-cover transition-transform duration-300 hover:scale-105"
-                      src={i.src}
-                      alt={i.alt}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+
 
             {/* Кнопки с общим классом gallery-btn */}
             <div className="gallery-btn about-wide-swiper-next absolute right-4 top-1/2 -translate-y-1/2 z-10"></div>
@@ -214,7 +183,7 @@ function AlleyAbout() {
                 768: { slidesPerView: 1 },
                 1024: { slidesPerView: 1 },
               }}
-              className="pb-8"
+              className="pb-8 mb-10"
             >
               {ALBUM_IMAGES.map((i) => (
                 <SwiperSlide key={i.id}>
@@ -224,6 +193,39 @@ function AlleyAbout() {
                   >
                     <img
                       className="object-cover transition-transform duration-300s"
+                      src={i.src}
+                      alt={i.alt}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={16}
+              slidesPerView={1}
+              loop
+              navigation={{
+                nextEl: ".about-wide-swiper-next",
+                prevEl: ".about-wide-swiper-prev",
+              }}
+              // autoplay={{ delay: 4000, disableOnInteraction: false }}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 1 },
+              }}
+              className="pb-8"
+            >
+              {WIDE_IMAGES.map((i) => (
+                <SwiperSlide key={i.id}>
+                  <div
+                    className="overflow-hidden rounded-xl cursor-pointer"
+                    onClick={() => openLightbox(i.id)}
+                  >
+                    <img
+                      className="w-full object-cover transition-transform duration-300 hover:scale-105"
                       src={i.src}
                       alt={i.alt}
                     />
