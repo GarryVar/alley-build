@@ -1,5 +1,4 @@
 import styles from "./AlleyHero.module.css";
-import hero01 from "../../../assets/alley-building/hero01.webp";
 import { Link } from "react-router-dom";
 
 function AlleyHero() {
@@ -8,19 +7,28 @@ function AlleyHero() {
       <div className={styles.HeroWrapper}>
         {/* Картинка как фон-слой */}
         <div className={styles.HeroImageLayer}>
-          <img
+          {/* <img
             src={hero01}
             alt="Занимаемся благоустройством общественных пространств и уличных территорий"
             className={styles.HeroImg}
-          />
+          /> */}
         </div>
         {/* Текст поверх картинки */}
         <div className={styles.HeroContent}>
-          <h1 className={styles.HeroTitle}>
+          <h1
+            data-aos="fade"
+            data-aos-duration="400"
+            className={styles.HeroTitle}
+          >
             <span>Аллея‑Строй</span> <br />
             делаем город лучше.
           </h1>
-          <p className={styles.HeroSubtitle}>
+          <p
+            data-aos="fade"
+            data-aos-duration="600"
+            data-aos-delay="600"
+            className={styles.HeroSubtitle}
+          >
             Проектируем и благоустраиваем любые территории — от детской площадки
             до микрорайона!
           </p>

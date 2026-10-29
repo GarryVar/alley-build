@@ -55,12 +55,12 @@ function ProjectPage() {
 
         <article className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* КОЛОНКА 1: ГАЛЕРЕЯ */}
-          <div className="md:sticky top-20">
+          <div className={styles.ProjectGallery}>
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               Фотоотчёт проекта
             </h3>
             <div
-              className={`${styles.GalleryGrid} grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2`}
+              className={`${styles.GalleryGrid} grid grid-cols-1 md:grid-cols-3 xl:grid-cols-2 gap-2`}
             >
               {project.gallery.map((src, indx) => (
                 <div
@@ -80,10 +80,7 @@ function ProjectPage() {
           </div>
 
           {/* КОЛОНКА 2: ОПИСАНИЕ */}
-          <div>
-            <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide mb-3 block">
-              {project.label}
-            </span>
+          <div className={styles.ProjectDesc}>
             <h1 className="text-[2.5rem] leading-none font-bold text-gray-900 mb-4">
               {project.title}
             </h1>
@@ -92,10 +89,7 @@ function ProjectPage() {
 
             <div className="grid grid-cols-2 gap-3 mb-8 pb-4 border-b border-gray-200">
               <div>
-                <strong>Площадь:</strong> 420 м²
-              </div>
-              <div>
-                <strong>Срок:</strong> 2 месяца
+                <strong>Срок:</strong> 1 год и 5 месяцев
               </div>
               <div>
                 <strong>Статус:</strong> Завершен
