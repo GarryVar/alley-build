@@ -27,6 +27,7 @@ function AlleyNav({ toggleMenu, isOpen }) {
   const mainLinks = [
     { text: "Главная", href: "/" },
     { text: "Наши работы", href: "/portfolio" },
+    { text: "Солнечная энергия", href: "https://garryvar.github.io/inverter-energy/#home" },
     { text: "О нас", href: "/company" },
   ];
 
@@ -50,18 +51,21 @@ function AlleyNav({ toggleMenu, isOpen }) {
         <div className={styles.NavTopBar}>
           <AlleyLogo width={180} />
         </div>
+        <div className={styles.NavMenuBar}>
 
-        <ul className={styles.NavMenu}>
-          {mainLinks.map((item) => (
-            <MenuItem
-              key={item.href}
-              to={item.href}
-              text={item.text}
-              onClick={handleClick}
-            />
-          ))}
-        </ul>
-        <div className={styles.NavInverters}>
+          <ul className={styles.NavMenu}>
+            {mainLinks.map((item) => (
+              <MenuItem
+                key={item.href}
+                to={item.href}
+                text={item.text}
+                onClick={handleClick}
+              />
+            ))}
+          </ul>
+        </div>
+
+        {/* <div className={styles.NavInverters}>
           <div className={styles.NavMenuSeparator}>
             <p>Наши подразделения</p>
             <ul className={styles.NavMenu}>
@@ -72,7 +76,8 @@ function AlleyNav({ toggleMenu, isOpen }) {
               />
             </ul>
           </div>
-        </div>
+        </div> */}
+
         <div className={styles.NavBottomBar}>
           <div className={styles.NavMenuSeparator}>
             <p>Мы в соцсетях</p>

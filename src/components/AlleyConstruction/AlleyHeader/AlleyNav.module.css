@@ -8,17 +8,13 @@
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  /* padding: 15px; */
-  /* background: var(--color-white); */
+
   background-color: color-mix(in oklab, #ffffff 97%, transparent);
   backdrop-filter: blur(12px);
 
   backdrop-filter: blur(12px);
   z-index: 100;
   transition: right 0.3s ease-in-out;
-  overflow-y: auto;
-
-  /* border-left: 1px solid var(--primary-grey); */
 }
 
 .NavCloseButton {
@@ -41,7 +37,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  /* даёт flex-дочернему скроллиться */
+  overflow-y: auto;
 }
 
 /* Закрытое состояние: уводим вправо за экран */
@@ -71,6 +70,11 @@
 
   text-decoration: underline;
   text-underline-offset: 8px;
+}
+
+.NavMenuBar {
+  height: 100%;
+
 }
 
 .NavMenu {
@@ -134,6 +138,7 @@
 
 .NavBottomBar {
   background-color: var(--primary-brand-light);
+  flex-shrink: 0;
 
   .NavMenuSeparator {
     border-bottom: none;
@@ -214,14 +219,14 @@
   }
 }
 
-@media (min-width: 920px) {
+/* @media (min-width: 920px) {
   .Nav {
-    max-width: 40vw;
+    max-width: 0vw;
   }
-}
+} */
 
 @media (min-width: 1020px) {
   .Nav {
-    max-width: 30vw;
+    max-width: 40vw;
   }
 }
