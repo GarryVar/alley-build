@@ -1,9 +1,9 @@
 import pic01 from "../../../assets/alley-building/other/area/pic01.webp";
 import pic02 from "../../../assets/alley-building/other/area/pic02.webp";
 import pic03 from "../../../assets/alley-building/other/area/pic03.webp";
-import poliv from "../../../assets/alley-building/other/water/autopoliv.jpg";
-import autopoliv from "../../../assets/alley-building/other/water/autopoliv2.png";
-import autopoliv02 from "../../../assets/alley-building/other/water/autopoliv03.jpg";
+import poliv from "../../../assets/alley-building/other/water/autopoliv.webp";
+import autopoliv from "../../../assets/alley-building/other/water/autopoliv2.webp";
+import autopoliv02 from "../../../assets/alley-building/other/water/autopoliv03.webp";
 
 import metalPic09 from "../../../assets/alley-building/other/area/pic09.webp";
 import metalPic10 from "../../../assets/alley-building/other/area/pic10.webp";
