@@ -1,6 +1,5 @@
 import styles from "./Footer.module.css";
 import AlleyLogo from "../AlleyConstruction/AlleyLogo/AlleyLogo";
-import AlleyNav from "../AlleyConstruction/AlleyHeader/AlleyNav";
 
 function Footer() {
   return (
@@ -9,9 +8,9 @@ function Footer() {
         <div
           className={`${styles.FooterWrapper} flex justify-between flex-col md:flex-row`}
         >
-          <span className="block font-bold text-white mb-2">
+          <div className={styles.FooterLogo}>
             <AlleyLogo width={300} />
-          </span>
+          </div>
           <div className="mt-4 md:mt-0">{/* <AlleyNav /> */}</div>
           <div className="mt-4 md:mt-0 text-sm">
             <div className="mt-4 md:mt-0 text-sm">

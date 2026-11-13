@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage";
 import AlleyCompany from "./components/AlleyConstruction/AlleyCompany/AlleyCompany";
 import AlleyPortfolio from "./components/AlleyConstruction/AlleyPortfolio/AlleyPortfolio";
 import ProjectPage from "./components/AlleyConstruction/ProjectPage/ProjectPage"; // Импортируем страницу проекта
+import ScrollToTop from "./components/ScrollToTop";
 
 import "./index.css";
 import "animate.css";
@@ -11,6 +12,7 @@ import "animate.css";
 function App() {
   return (
     <BrowserRouter basename="/">
+      <ScrollToTop />
       <Routes>
         {/* Главная страница: Layout оборачивает HomePage */}
         <Route

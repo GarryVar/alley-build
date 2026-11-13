@@ -10,3 +10,8 @@
   display: flex;
   gap: 20px;
 }
+
+.FooterLogo {
+  display: flex;
+  justify-content: center;
+}

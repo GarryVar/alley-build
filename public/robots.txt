@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alley-build-garryvar.mia0.amvera.tech/sitemap.xml
